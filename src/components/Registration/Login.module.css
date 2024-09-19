@@ -1,0 +1,96 @@
+.loginContainer {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .loginTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; 
+  }
+  
+  .signupLink {
+    margin-bottom: 20px;
+  }
+  
+  .link {
+    color: #007bff; 
+    text-decoration: none;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputField {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .passwordWrapper {
+    position: relative;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-40%);
+    cursor: pointer;
+    color: #6C4D38; /* Use the specified color */
+  }
+  
+  .loginButton {
+    background-color: #6C4D38; /* Use the specified color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .loginButton:hover {
+    background-color: #9e785f;
+  }
+  .forgotPasswordLink {
+    color: #6C4D38; /* Use the specified color */
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+  
+  .orDivider {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .googleLogin {
+    background-color: #fff;
+    border: 1px solid #6C4D38; /* Use the specified color */
+    color: #6C4D38; /* Use the specified color */
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .googleIcon {
+    margin-right: 10px;
+  }
+
+  .googleLogin:hover {
+    background-color: #9e785f;
+    color: #fff;
+  }
+  

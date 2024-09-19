@@ -1,0 +1,103 @@
+/* SignUp.module.css */
+
+.signupContainer {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .signupTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .loginLink {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .passwordWrapper {
+    position: relative;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #6C4D38; /* Use the specified color */
+  }
+  
+  
+  .signupButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #6C4D38;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .signupButton:hover {
+    background-color: #9e785f;
+  }
+  
+  .orDivider {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .googleSignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #6C4D38;
+    border: 1px solid #6C4D38;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .googleIcon {
+    margin-right: 10px;
+  }
+  
+  .googleSignup:hover {
+    background-color: #9e785f;
+    color: #fff;
+  }
+  
