@@ -3,6 +3,7 @@ import styles from './AboutUsHome.module.css';
 import img1 from '../../assets/home/about1.png';
 import img2 from '../../assets/home/about2.png';
 import img3 from '../../assets/home/about3.png';
+import { Link } from 'react-router-dom';
 
 const AboutUsHome = () =>{
     return(
@@ -11,14 +12,25 @@ const AboutUsHome = () =>{
                 <div className="row overflow-hidden">
                     <div className="col-md-6">
                         <p data-aos="slide-right" className={styles.head}>ABOUT US</p>
-                        <p data-aos="slide-left" className={styles.heading}>We have a great team in terms of technology</p>
+                        <p data-aos="slide-left" className={styles.heading}>Mebiut has a skilled team dedicated to crafting exceptional sauces.</p>
                         <div data-aos="zoom-in">
-                            <p className={styles.content}>A highly specialized Management team with over 20 combined years of experience in the Healthcare industry with proven ability to optimally combine digital technology, skilled resources and efficient business processes to implement creative as well as proven market solutions to suit an ever-evolving market. Our forte has been to successfully tailor our solutions to support your needs whether it is in the space of Consulting, Product Management or Service Delivery</p>
+                            <p className={styles.content}>Mebiut's highly specialized management team boasts over 20 years of 
+                                combined experience in the food industry, with a proven ability to blend traditional expertise 
+                                with innovative digital solutions. We excel in crafting tailored market strategies that meet 
+                                evolving consumer needs, whether through consulting, product development, or exceptional service delivery.
+                            </p>
                         </div>
-                        <div data-aos='zoom-in' style={{textAlign: 'left'}}>
-                            <button className={`btn custom_btn ${styles.btn}`}> MEET OUR TEAM</button>
+                        <div data-aos='zoom-in' style={{ textAlign: 'left' }}>
+                            <Link to="/aboutUs" style={{ textDecoration: "none" }}>
+                                <button
+                                    className={`btn custom_btn ${styles.btn}`}
+                                    style={{ backgroundColor: '#6C4D38', color: '#fff' }}
+                                    >
+                                    MEET OUR TEAM
+                                </button>
+                            </Link>
                         </div>
-                        
+
                     </div>
 
                     <div className="col-md-6 mt-5 overflow-hidden">
