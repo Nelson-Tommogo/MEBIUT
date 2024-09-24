@@ -6,9 +6,9 @@ import data from './data';
 const Services = () => {
     return(
         <div className={`container ${styles.contain} overflow-hidden pb-2`}>
-                <p data-aos='slide-right' className={styles.heading}>Services</p>
+                <p data-aos='slide-right' className={styles.heading}>Mebiut Services</p>
             <div>
-                <p data-aos='slide-left' className={`mx-auto ${styles.subHeading}`}>Modernize your workflow and maximize result</p>
+                <p data-aos='slide-left' className={`mx-auto ${styles.subHeading}`}>Check out Our Amazing services</p>
             </div>
 
             <div className={`row ${styles.cont}`}>
