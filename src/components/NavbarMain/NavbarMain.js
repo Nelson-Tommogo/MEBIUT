@@ -61,7 +61,7 @@ const NavbarMain = () => {
       >
         <Container>
           <Navbar.Brand href="/" className={styles.logo}>
-            Miritus
+            Mebiut
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -122,7 +122,7 @@ const NavbarMain = () => {
                     }}
                     className={styles.dropdownText}
                   >
-                    Social Media Marketing
+                    Custom Sauce Development
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
@@ -134,7 +134,7 @@ const NavbarMain = () => {
                     }}
                     className={styles.dropdownText}
                   >
-                    Quality Assurance
+                    Subscription Service
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
@@ -146,7 +146,7 @@ const NavbarMain = () => {
                     }}
                     className={styles.dropdownText}
                   >
-                    Cloud and IoT Based Solutions
+                    Corporate and Bulk Orders
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
@@ -158,7 +158,7 @@ const NavbarMain = () => {
                     }}
                     className={styles.dropdownText}
                   >
-                    IT Consultancy
+                    Sauce Tastings and Workshops
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
@@ -170,7 +170,7 @@ const NavbarMain = () => {
                     }}
                     className={styles.dropdownText}
                   >
-                    AI Solutions
+                    Wholesale and Distribution
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
