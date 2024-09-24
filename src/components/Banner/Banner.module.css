@@ -1,6 +1,10 @@
 .imgbox {
     height: 94vh;
+<<<<<<< HEAD
     background: url('../../assets/background.png');
+=======
+    background: url('../../assets/tomato.webp');
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,6 +25,10 @@
     width: 272px;
     height: 64px;
     font-size: 14px;
+<<<<<<< HEAD
+=======
+    background-color: #6C4D38;
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850
 }
 
 @media screen and (max-width: 1266px) {
@@ -76,4 +84,8 @@
         width: 110px;
         font-size: 11px;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850

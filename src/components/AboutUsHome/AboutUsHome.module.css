@@ -2,7 +2,11 @@
     font-size: 30px;
     font-family: 'Poppins';
     font-weight: 500;
+<<<<<<< HEAD
     color: #ff4c0a;
+=======
+    color: #6C4D38;
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850
     text-align: left;
     margin-bottom: 29px;
 }
@@ -135,4 +139,8 @@
         margin-top: 40px;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850

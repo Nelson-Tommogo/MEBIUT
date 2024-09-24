@@ -3,6 +3,7 @@ import img2 from '../../assets/caseStudy/2.png';
 import img3 from '../../assets/caseStudy/3.png';
 import img4 from '../../assets/caseStudy/4.png';
 
+<<<<<<< HEAD
 
 const fakeData = [
     {
@@ -49,3 +50,50 @@ const fakeData = [
     }
 ]
 export default fakeData;
+=======
+const fakeData = [
+    {
+        id: 1,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img1,
+        category: 'financial'
+    },
+    {
+        id: 2,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img2,
+        category: 'human resources'
+    },
+    {
+        id: 3,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img3,
+        category: 'start up'
+    },
+    {
+        id: 4,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img4,
+        category: 'strategy'
+    },
+    {
+        id: 5,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img1,
+        category: 'financial'
+    },
+    {
+        id: 6,
+        designation: 'Marketing, SEO',
+        title: 'Dicta Sunt Explicabo',
+        img: img2,
+        category: 'human resources'
+    }
+]
+export default fakeData;
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850

@@ -20,6 +20,10 @@
     margin-right: 14px;
     margin-bottom: 40px;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+    width: 40px;
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850
 }
 .img:hover{
     transform: scale(1.1);
@@ -90,4 +94,8 @@
         width: 100%;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3b88fdcaf1e60e142cb4386658726adb48036850
