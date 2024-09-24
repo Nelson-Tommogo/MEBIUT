@@ -11,14 +11,12 @@ const Real = () =>{
                 </div>
                 <div className="col-md-6">
                     <div className={styles.text}>
-                        <p data-aos='slide-right' data-aos-offset="150"  className={styles.heading}>Mebiut</p>
-                        <p data-aos='slide-left' data-aos-offset="150" className={styles.subHeading}>Transforming Customer Experiences</p>
-                        <p data-aos='zoom-in' data-aos-offset="150" className={styles.content}>
-                            At Mebiut, we leverage responsive web design and innovative technology to enhance customer experiences. 
-                            Our agile development approach and robust analytics ensure that every interaction is seamless and impactful. 
-                            We believe in the power of user experience to drive engagement and create lasting impressions.
-                        </p>
-                        
+                        <p data-aos='slide-right' data-aos-offset="150"  className={styles.heading}>Real</p>
+                        <p data-aos='slide-left' data-aos-offset="150" className={styles.subHeading}>Improves Customer Experiences</p>
+                        <p data-aos='zoom-in' data-aos-offset="150" className={styles.content}>Responsive web design supply chain crowdfunding agile development analytics technology ownership startup. Network effects social proof user experience prototype buzz product management deployment metrics sales infographic equity holy grail crowdfunding release. </p>
+                        <div data-aos='zoom-in' style={{textAlign:'left'}}>
+                            <button className={`btn custom_btn ${styles.btn}`}>LET&apos;S TALK</button>
+                        </div>
                     </div>
                 </div>
             </div>
