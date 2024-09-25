@@ -18,19 +18,19 @@ const ContactUsForm = () =>{
     return(
         <>
             <div className={`container ${styles.contain} overflow-hidden`}>
-                <p data-aos='fade-up' className={`${styles.heading} mx-auto`}>We&apos;d Love to Hear From You</p>
+                <p data-aos='fade-up' className={`${styles.heading} mx-auto`}>Mebiut We&apos;d Love to Hear From You</p>
 
                 <div className="row">
                     <div className="col-md-4" data-aos='fade-right'>
                         <p className={styles.head}>Address</p>
-                        <p className={styles.content}>1201 New Zealand Metropolis 3452</p>
+                        <p className={styles.content}>P.O BOX 00618 Ruaraka</p>
                     </div>
 
                     <div className="col-md-4" data-aos='fade-up' data-aos-offset='100'>
                         <p className={styles.head}>Contact</p>
-                        <p className={styles.content}>Mobile 	: +00 123 456 78</p> 
-                        <p className={styles.content}>Phone 	: +00 123 678 90</p>
-                        <p className={styles.content}>Email: contact@gmail.com</p>
+                        <p className={styles.content}>Mobile 	: +254113792645</p> 
+                        <p className={styles.content}>Phone 	: 254759735505</p>
+                        <p className={styles.content}>Email: info@mebiut.com</p>
                     </div>
 
                     <div className="col-md-4" data-aos='fade-left' data-aos-offset='70'>
