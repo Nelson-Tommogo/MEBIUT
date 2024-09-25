@@ -8,6 +8,7 @@ import SMediaService from '../views/sMediaService';
 import SignUp from '../components/Registration/SignUp';
 import Login from '../components/Registration/Login';
 import ForgotPassword from '../components/Registration/ForgotPassword';
+import OurShop from '../components/Ourshop/OurShop'
 
 const routes = [
   {
@@ -49,6 +50,10 @@ const routes = [
   {
     component: <ForgotPassword />,
     to: '/forgot-password'
+  },
+  {
+    component: <OurShop />,
+    to: '/OurShop'
   }
 ];
 
