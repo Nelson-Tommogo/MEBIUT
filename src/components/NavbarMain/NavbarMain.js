@@ -91,6 +91,18 @@ const NavbarMain = () => {
                 About Us
               </NavLink>
 
+              <NavLink
+                to="/OurShop"
+                className={`${styles.nav_text} nav-link ${activeNav[2] ? styles.active : ""}`}
+                style={{ marginTop: "8px" }}
+                onClick={() => {
+                  handleActiveNav(2);
+                  closeNav();
+                }}
+              >
+                Shop Now
+              </NavLink>
+
               <NavDropdown
                 show={showServicesDropdown}
                 onMouseEnter={showServicesDropdownHandler}
@@ -102,11 +114,11 @@ const NavbarMain = () => {
                     style={{ textDecoration: "none" }}
                     className={styles.dropicon}
                     onClick={() => {
-                      handleActiveNav(2);
+                      handleActiveNav(3);
                       closeNav();
                     }}
                   >
-                    <span className={`${styles.nav_text} my-auto ${activeNav[2] ? styles.active : ""}`}>
+                    <span className={`${styles.nav_text} my-auto ${activeNav[3] ? styles.active : ""}`}>
                       Services
                     </span>
                   </Link>
@@ -117,7 +129,7 @@ const NavbarMain = () => {
                   <NavLink
                     to="/sMediaService"
                     onClick={() => {
-                      handleActiveNav(2);
+                      handleActiveNav(3);
                       closeNav();
                     }}
                     className={styles.dropdownText}
@@ -177,10 +189,10 @@ const NavbarMain = () => {
 
               <NavLink
                 to="/contactUs"
-                className={`${styles.nav_text} nav-link ${activeNav[3] ? styles.active : ""}`}
+                className={`${styles.nav_text} nav-link ${activeNav[4] ? styles.active : ""}`}
                 style={{ marginTop: "8px" }}
                 onClick={() => {
-                  handleActiveNav(3);
+                  handleActiveNav(4);
                   closeNav();
                 }}
               >
@@ -192,7 +204,7 @@ const NavbarMain = () => {
                 show={showRegistrationDropdown}
                 onMouseEnter={showRegistrationDropdownHandler}
                 onMouseLeave={hideRegistrationDropdownHandler}
-                className={`${styles.nav_text} nav-link ${activeNav[4] ? styles.active : ""}`}
+                className={`${styles.nav_text} nav-link ${activeNav[5] ? styles.active : ""}`}
                 title="Registration"
                 id="nav-registration-dropdown"
               >
@@ -201,7 +213,7 @@ const NavbarMain = () => {
                     to="/signup"
                     className={styles.dropdownText}
                     onClick={() => {
-                      handleActiveNav(4);
+                      handleActiveNav(5);
                       closeNav();
                     }}
                   >
@@ -213,7 +225,7 @@ const NavbarMain = () => {
                     to="/login"
                     className={styles.dropdownText}
                     onClick={() => {
-                      handleActiveNav(4);
+                      handleActiveNav(5);
                       closeNav();
                     }}
                   >
