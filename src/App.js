@@ -1,6 +1,7 @@
 import NavbarMain from './components/NavbarMain';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import React from 'react';
 import './App.css';
 import routes from './router/route';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';

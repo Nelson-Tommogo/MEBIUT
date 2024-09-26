@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase auth method
+import { auth } from './firebase'; // Firebase config
 import styles from './SignUp.module.css'; // Import CSS module
 import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa'; // FontAwesome icons
 
@@ -14,6 +16,7 @@ const SignUp = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState(''); // For displaying errors
 
   const handleChange = (e) => {
     setFormData({
@@ -22,9 +25,20 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      console.log("User created:", userCredential.user);
+      // You can navigate the user to a different page or show a success message here
+    } catch (error) {
+      setError(error.message); // Show error message to the user
+    }
   };
 
   return (
@@ -34,6 +48,8 @@ const SignUp = () => {
       <p className={styles.loginLink}>
         Already have an account? <NavLink to="/login" className={styles.link}>Log in</NavLink>
       </p>
+
+      {error && <p className={styles.errorText}>{error}</p>} {/* Display error message */}
 
       <form onSubmit={handleSubmit} className={styles.signupForm}>
         <input
