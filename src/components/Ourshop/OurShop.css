@@ -1,191 +1,253 @@
-import React, { useState } from 'react';
-import './OurShop.css';
-import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Footer from "../../components/Footer";
+.our-shop-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
-// Placeholder products data
-const products = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'This is the description for product 1',
-    image: 'https://via.placeholder.com/150',
-    price: 1000,
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'This is the description for product 2',
-    image: 'https://via.placeholder.com/150',
-    price: 2000,
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    description: 'This is the description for product 3',
-    image: 'https://via.placeholder.com/150',
-    price: 3000,
-  },
-];
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-const OurShop = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
 
-  const addToCart = (product) => {
-    const existingProduct = cartItems.find(item => item.id === product.id);
-    if (existingProduct) {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-    }
-  };
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
 
-  const removeFromCart = (product) => {
-    setCartItems(cartItems.filter(item => item.id !== product.id));
-  };
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
 
-  const updateQuantity = (product, newQuantity) => {
-    if (newQuantity <= 0) {
-      removeFromCart(product);
-    } else {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: newQuantity }
-          : item
-      ));
-    }
-  };
+.product-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  height: 400px;
+}
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
 
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim())
-  );
+.add-to-cart-btn {
+  background-color: #b8860b; /* Golden brown */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-  const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+.add-to-cart-btn:hover {
+  background-color: #a57d00; /* Darker golden brown */
+}
 
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
+.cart-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 125px;
+}
 
-  console.log('Filtered Products:', filteredProducts);
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  return (
-    <>
-      <div className="our-shop-container">
-        <header className="shop-header">
-          <h1>Our Shop</h1>
-          
-          {/* Search Bar */}
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={searchQuery}
-              onChange={handleSearch}
-            />
-            <FaSearch className="search-icon" size={20} />
-          </div>
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
 
-          <div className="cart-icon" onClick={toggleCart}>
-            <FaShoppingCart size={30} />
-            <span className="cart-count">{cartItems.length}</span>
-          </div>
-        </header>
+.cart-item-details {
+  flex-grow: 1;
+}
 
-        {/* Product Grid (show filtered products) */}
-        <div className="product-grid">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                <img src={product.image} alt={product.name} />
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <p>Ksh {product.price}</p>
-                <button
-                  className="add-to-cart-btn"
-                  onClick={() => addToCart(product)}
-                >
-                  Add to Basket
-                </button>
-              </div>
-            ))
-          ) : (
-            <p>No products found</p> // Fallback for no products found
-          )}
-        </div>
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+}
 
-        {/* Cart Dropdown */}
-        {isCartOpen && (
-          <div className="cart-dropdown">
-            <div className="cart-header">
-              <h3>Your Cart</h3>
-              <FaTimes className="close-cart-btn" onClick={toggleCart} size={20} />
-            </div>
-            {cartItems.length > 0 ? (
-              <ul>
-                {cartItems.map((item) => (
-                  <li key={item.id}>
-                    <div className="cart-item">
-                      <img src={item.image} alt={item.name} className="cart-item-img"/>
-                      <div className="cart-item-details">
-                        <h4>{item.name}</h4>
-                        <div className="cart-item-controls">
-                          <button
-                            className="quantity-btn"
-                            onClick={() => updateQuantity(item, item.quantity - 1)}
-                          >
-                            -
-                          </button>
-                          <span>{item.quantity}</span>
-                          <button
-                            className="quantity-btn"
-                            onClick={() => updateQuantity(item, item.quantity + 1)}
-                          >
-                            +
-                          </button>
-                          <button
-                            className="remove-item-btn"
-                            onClick={() => removeFromCart(item)}
-                          >
-                            <FaTrashAlt /> Remove
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>Your cart is empty</p>
-            )}
+.quantity-btn {
+  background-color: #b8860b;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
 
-            {cartItems.length > 0 && (
-              <div className="cart-summary">
-                <p>Total Quantity: {totalQuantity}</p>
-                <p>Total Amount: Ksh {totalAmount}</p>
-                <Link to="/Payment">
-                  <button className="checkout-btn">Checkout</button>
-                </Link>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+.quantity-btn:hover {
+  background-color: #a57d00;
+}
 
-      <Footer />
-    </>
-  );
-};
+.remove-item-btn {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
 
-export default OurShop;
+.checkout-btn {
+  background-color: #b8860b;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #a57d00;
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-cart-btn {
+  cursor: pointer;
+}
+
+.cart-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100; /* Ensure it appears above other content */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  justify-content: center; /* Center align on smaller screens */
+}
+
+.search-bar input {
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-right: 8px;
+  max-width: 100%; /* Ensures it doesn't overflow on smaller screens */
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .search-bar input {
+    width: 350px; /* Reduce width on tablet screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 100%; /* Full width on mobile screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%; /* Full width input on small screens */
+    margin-right: 0; /* Remove margin for better fit */
+  }
+
+  .search-icon {
+    margin-left: 10px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 1 column on mobile */
+  }
+
+  .cart-dropdown {
+    width: 100%; /* Full width on mobile */
+    left: 0;
+    right: 0;
+    top: 60px;
+  }
+
+  .checkout-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-header {
+    flex-direction: column;
+  }
+
+  .cart-icon {
+    margin-top: 10px;
+  }
+
+  .product-card {
+    padding: 10px; /* Reduced padding for mobile */
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 15px; /* Adjust button size for smaller screens */
+  }
+
+  .cart-dropdown {
+    padding: 15px;
+  }
+}
