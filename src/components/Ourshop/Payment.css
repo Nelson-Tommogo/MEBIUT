@@ -1,0 +1,255 @@
+.payment-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .payment-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .live-location-btn, .submit-payment-btn, .track-btn {
+    background-color: #c79a3b; /* Golden brown color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .live-location-btn.active {
+    background-color: #aa7b2b; /* Darker shade when active */
+  }
+  
+  .live-location-btn:hover, .submit-payment-btn:hover, .track-btn:hover {
+    background-color: #b3842d; /* Hover effect */
+  }
+  
+  .delivery-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    color: #333;
+  }
+  
+  .icon {
+    margin-right: 5px;
+    color: #c79a3b; /* Golden brown color for icons */
+  }
+  
+  .error {
+    border: 1px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .tracking-section {
+    margin-top: 20px;
+  }
+  
+  .track-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Media query for screens up to 330px */
+@media (max-width: 330px) {
+  .payment-container {
+    padding: 10px; /* Reduce padding */
+    max-width: 80%;
+  }
+
+  .payment-form input {
+    padding: 8px; /* Smaller input padding */
+  }
+
+  .live-location-btn,
+  .submit-payment-btn,
+  .track-btn {
+    padding: 8px 15px; /* Reduce button padding */
+    font-size: 14px;   /* Smaller font size for buttons */
+  }
+
+  .payment-form label {
+    font-size: 14px; /* Smaller label font size */
+  }
+
+  .delivery-info {
+    font-size: 14px; /* Adjust delivery info font size */
+  }
+
+  .error-message {
+    font-size: 11px; /* Smaller font size for error message */
+  }
+
+  h2 {
+    font-size: 18px; /* Smaller heading font */
+  }
+
+  h3 {
+    font-size: 16px; /* Smaller sub-heading font */
+  }
+
+  .tracking-section input {
+    padding: 8px; /* Smaller input field for tracking */
+  }
+
+  .track-btn {
+    padding: 8px; /* Adjust button padding */
+  }
+}
+
+/* Media query for screens up to 760px */
+@media (max-width: 760px) {
+    .payment-container {
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    .payment-form input {
+      padding: 9px;
+    }
+  
+    .live-location-btn,
+    .submit-payment-btn,
+    .track-btn {
+      padding: 9px 18px;
+      font-size: 16px;
+    }
+  
+    .payment-form label {
+      font-size: 16px;
+    }
+  
+    .delivery-info {
+      font-size: 15px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  
+    h3 {
+      font-size: 20px;
+    }
+  
+    .tracking-section input {
+      padding: 9px;
+    }
+  
+    .track-btn {
+      padding: 9px;
+    }
+  }
+  
+  /* Media query for screens up to 500px */
+  @media (max-width: 500px) {
+    .payment-container {
+      padding: 12px;
+    }
+  
+    .payment-form input {
+      padding: 8px;
+    }
+  
+    .live-location-btn,
+    .submit-payment-btn,
+    .track-btn {
+      padding: 8px 16px;
+      font-size: 15px;
+    }
+  
+    .payment-form label {
+      font-size: 15px;
+    }
+  
+    .delivery-info {
+      font-size: 14px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    h3 {
+      font-size: 18px;
+    }
+  
+    .tracking-section input {
+      padding: 8px;
+    }
+  
+    .track-btn {
+      padding: 8px;
+    }
+  }
+  
+  /* Media query for screens up to 330px */
+  @media (max-width: 330px) {
+    .payment-container {
+      padding: 10px;
+      max-width: 85%;
+    }
+  
+    .payment-form input {
+      padding: 8px;
+    }
+  
+    .live-location-btn,
+    .submit-payment-btn,
+    .track-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  
+    .payment-form label {
+      font-size: 14px;
+    }
+  
+    .delivery-info {
+      font-size: 14px;
+    }
+  
+    .error-message {
+      font-size: 11px;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+  
+    h3 {
+      font-size: 16px;
+    }
+  
+    .tracking-section input {
+      padding: 8px;
+    }
+  
+    .track-btn {
+      padding: 8px;
+    }
+  }
