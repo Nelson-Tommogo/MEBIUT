@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './OurShop.css'; // We will use this for the golden brown button and other styling
-import { FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa'; // Added FaTimes for the close icon
+import './OurShop.css';
+import { FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 // Placeholder products data
 const products = [
@@ -9,18 +10,21 @@ const products = [
     name: 'Product 1',
     description: 'This is the description for product 1',
     image: 'https://via.placeholder.com/150',
+    price: 1000, // Added price for each product
   },
   {
     id: 2,
     name: 'Product 2',
     description: 'This is the description for product 2',
     image: 'https://via.placeholder.com/150',
+    price: 2000, // Added price for each product
   },
   {
     id: 3,
     name: 'Product 3',
     description: 'This is the description for product 3',
     image: 'https://via.placeholder.com/150',
+    price: 3000, // Added price for each product
   },
 ];
 
@@ -60,6 +64,10 @@ const OurShop = () => {
     }
   };
 
+  // Calculate total quantity and amount
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+
   // Toggle cart dropdown
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -82,6 +90,7 @@ const OurShop = () => {
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
             <p>{product.description}</p>
+            <p>Ksh {product.price}</p>
             <button
               className="add-to-cart-btn"
               onClick={() => addToCart(product)}
@@ -136,8 +145,15 @@ const OurShop = () => {
           ) : (
             <p>Your cart is empty</p>
           )}
+
           {cartItems.length > 0 && (
-            <button className="checkout-btn">Checkout</button>
+            <div className="cart-summary">
+              <p>Total Quantity: {totalQuantity}</p>
+              <p>Total Amount: Ksh {totalAmount}</p>
+              <Link to="/Payment">
+                <button className="checkout-btn">Checkout</button>
+              </Link>
+            </div>
           )}
         </div>
       )}
