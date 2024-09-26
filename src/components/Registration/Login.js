@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './Login.module.css'; // Import CSS module
-import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa'; // FontAwesome Google Icon and Eye Icons
+import { NavLink, useNavigate } from 'react-router-dom'; 
+import { signInWithEmailAndPassword } from 'firebase/auth'; 
+import { auth } from './firebase'; 
+import styles from './Login.module.css'; 
+import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa'; 
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,8 @@ const Login = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setFormData({
@@ -18,9 +22,16 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      console.log("User logged in, Enjoy Mebiut", userCredential.user);
+
+      navigate('/');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -34,6 +45,8 @@ const Login = () => {
       <p className={styles.signupLink}>
         Don't have an account? <NavLink to="/signup" className={styles.link}>Sign up</NavLink>
       </p>
+
+      {error && <p className={styles.errorText}>{error}</p>} {/* Display error message */}
 
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <input
