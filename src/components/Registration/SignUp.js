@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './SignUp.module.css';
 import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth'; 
-import { auth } from './firebase';
+import { auth } from '../../firebase';
 import Modal from 'react-modal'; 
 
 const SignUp = () => {
