@@ -38,7 +38,7 @@ const IndividualService = () =>{
 
                     <div className="col-md-4" data-aos='fade-left' data-aos-offset="150">
                         <img src={lock} alt="" className={styles.img}/>
-                        <p className={styles.logo_head}>Experts Worker</p>
+                        <p className={styles.logo_head}>Experts Worker</p>git
                         <p className={styles.heading_content}>Parallel path it's a simple lift and shift the team pull in ten extra bodies </p>
                     </div>
                 </div>
