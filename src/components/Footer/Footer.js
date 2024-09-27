@@ -67,7 +67,7 @@ const Footer = () =>{
 
 
             <div style={{backgroundColor: '#2b2b2b', borderTop: 'solid 1px #707070'}}>
-                    <p className={styles.bottom}>Copyright © 2024. All right reserved</p>
+                    <p className={styles.bottom}>Copyright © 2024 Mebiut. All right reserved</p>
             </div>
         </>
     )

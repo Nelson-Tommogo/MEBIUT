@@ -23,11 +23,10 @@ const ServicesHome = () => {
                     data.map((x) => (
                         <div key={x.id} className="col-lg-4 col-md-6">
                             <ServiceHome
-                                id={x.id}
                                 heading={x.heading}
                                 content={x.content}
                                 to={x.to}
-                                icon={x.icon}
+                                icon={x.icon} // Pass the FontAwesome icon prop
                             />
                         </div>
                     ))}
