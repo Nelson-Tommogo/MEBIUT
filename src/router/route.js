@@ -8,51 +8,51 @@ import SMediaService from '../views/sMediaService';
 import SignUp from '../components/Registration/SignUp';
 import Login from '../components/Registration/Login';
 import ForgotPassword from '../components/Registration/ForgotPassword';
-import OurShop from '../components/Ourshop/OurShop'
+import OurShop from '../components/Ourshop/OurShop';
 
 const routes = [
   {
-    component: <Home />,
+    component: Home,  // Pass the component reference (not JSX)
     to: '/'
   },
   {
-    component: <Service />,
+    component: Service,
     to: '/services'
   },
   {
-    component: <ContactUs />,
+    component: ContactUs,
     to: '/contactUs'
   },
   {
-    component: <IndividualService />,
+    component: IndividualService,
     to: '/individualService'
   },
   {
-    component: <AboutUs />,
+    component: AboutUs,
     to: '/aboutUs'
   },
   {
-    component: <ProjectDetails />,
+    component: ProjectDetails,
     to: '/projectDetails'
   },
   {
-    component: <SMediaService />,
+    component: SMediaService,
     to: '/sMediaService'
   },
   {
-    component: <SignUp />,
+    component: SignUp,
     to: '/signup'
   },
   {
-    component: <Login />,
+    component: Login,
     to: '/login'
   },
   {
-    component: <ForgotPassword />,
+    component: ForgotPassword,
     to: '/forgot-password'
   },
   {
-    component: <OurShop />,
+    component: OurShop,
     to: '/OurShop'
   }
 ];
