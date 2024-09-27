@@ -13,7 +13,7 @@ const AboutUsHome = () =>{
                         <p data-aos="slide-right" className={styles.head}>ABOUT US</p>
                         <p data-aos="slide-left" className={styles.heading}>Bringing Kenyas Finest Flavors to the World</p>
                         <div data-aos="zoom-in">
-                            <p className={styles.content}>At **Mebiut**, we are dedicated to creating high-quality, flavorful food products that celebrate the vibrant culinary traditions of Kenya. Our team of passionate experts brings years of experience in food innovation, crafting unique sauces and condiments like our signature **Kenyan Taste sauces** and **mayonnaise**. We blend the finest local ingredients with modern techniques to provide products that enhance every meal, making them accessible to homes across Kenya and beyond.</p>
+                            <p className={styles.content}>At Mebiut, we are dedicated to creating high-quality, flavorful food products that celebrate the vibrant culinary traditions of Kenya. Our team of passionate experts brings years of experience in food innovation, crafting unique sauces and condiments like our signature Kenyan Taste sauces and mayonnaise. We blend the finest local ingredients with modern techniques to provide products that enhance every meal, making them accessible to homes across Kenya and beyond.</p>
                         </div>
                         <div data-aos='zoom-in' style={{textAlign: 'left'}}>
                             <button className={`btn custom_btn ${styles.btn}`}> MEET OUR TEAM</button>
