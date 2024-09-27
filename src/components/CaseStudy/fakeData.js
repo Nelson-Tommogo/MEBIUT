@@ -1,51 +1,48 @@
-import img1 from '../../assets/caseStudy/1.png';
-import img2 from '../../assets/caseStudy/2.png';
-import img3 from '../../assets/caseStudy/3.png';
-import img4 from '../../assets/caseStudy/4.png';
-
+import img1 from '../../assets/caseStudy/case1.jpeg';
+import img2 from '../../assets/caseStudy/case2.jpeg';
+import img3 from '../../assets/caseStudy/case3.jpeg';
+import img4 from '../../assets/caseStudy/case4.jpeg';
+import img5 from '../../assets/caseStudy/case5.jpeg';
+import img6 from '../../assets/caseStudy/case6.jpeg';
 
 const fakeData = [
     {
         id: 1,
-        designation: 'Delicious Sauce',
-        title: 'Spicy Tomato Sauce',
+        title: 'Kenyan Taste',
         img: img1,
-        category: 'sauces'
+        category: 'kenyan taste'
     },
     {
         id: 2,
-        designation: 'Creamy Mayonnaise',
-        title: 'Classic Mayo',
+        title: 'Mayonnaise',
         img: img2,
         category: 'mayonnaise'
     },
     {
         id: 3,
-        designation: 'Delicious Sauce',
-        title: 'Herbed Garlic Sauce',
+        title: 'Mayonnaise',
         img: img3,
-        category: 'sauces'
+        category: 'mayonnaise'
     },
     {
         id: 4,
-        designation: 'Creamy Mayonnaise',
-        title: 'Zesty Lime Mayo',
+        title: 'Kenyan Taste',
         img: img4,
-        category: 'mayonnaise'
+        category: 'Kenyan Taste'
     },
     {
         id: 5,
-        designation: 'Delicious Sauce',
-        title: 'Barbecue Sauce',
-        img: img1,
-        category: 'sauces'
+        title: 'Mayonnaise',
+        img: img5,
+        category: 'mayonnaise'
     },
     {
         id: 6,
-        designation: 'Creamy Mayonnaise',
-        title: 'Low Fat Mayo',
-        img: img2,
+        title: 'Mayonnaise',
+        img: img6,
         category: 'mayonnaise'
-    }
-]
+    },
+    
+];
+
 export default fakeData;

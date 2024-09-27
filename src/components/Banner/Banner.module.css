@@ -1,6 +1,6 @@
 .imgbox {
     height: 94vh;
-    background: url('../../assets/background.png');
+    background: url('../../assets/tomato.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,6 +21,10 @@
     width: 272px;
     height: 64px;
     font-size: 14px;
+    background-color: #6C4D38 !important;
+}
+.btn:hover{
+    background-color: #9e785f !important;
 }
 
 @media screen and (max-width: 1266px) {

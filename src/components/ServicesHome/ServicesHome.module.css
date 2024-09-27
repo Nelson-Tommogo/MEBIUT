@@ -7,7 +7,7 @@
 
 .heading{
     font-size: 30px;
-    color: #ff4c0a;
+    color: #6C4D38 !important;
     font-weight: 500;
 }
 .subHeading{
@@ -15,6 +15,28 @@
     font-weight: bold;
     color: #222a41;
     width: 645px;
+}
+.icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    margin-bottom: 15px; /* Space below the icon */
+}
+.serviceCard {
+    text-align: center; /* Center text and icon */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid #ddd; /* Optional: border for cards */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-top: 10px;
+}
+
+.link {
+    color: #6C4D38 !important; /* Set the color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Optional: smooth color transition */
+}
+
+.link:hover {
+    color: #94725b !important; /* Optional: change color on hover */
 }
 
 @media screen and (max-width: 1200px) {
