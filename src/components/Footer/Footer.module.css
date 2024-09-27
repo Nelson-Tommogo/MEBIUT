@@ -2,7 +2,7 @@
     font-size: 40px;
     font-family: 'Montserrat';
     font-weight: bold;
-    color: #ff4c0a;
+    color: #6C4D38 !important;
     text-align: left;
 }
 
@@ -20,6 +20,7 @@
     margin-right: 14px;
     margin-bottom: 40px;
     cursor: pointer;
+    width: 40px;
 }
 .img:hover{
     transform: scale(1.1);
