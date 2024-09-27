@@ -2,26 +2,26 @@
     font-size: 48px;
     padding-top: 155px;
     width: 700px;
-    color: #333333;
+    color: rgb(108,77,56);
     margin: auto;
     font-weight: bold;
 }
 
 .sub_text{
     font-size: 20px;
-    color: #222a41;
+    color: rgb(108,77,56);
     margin-top: 23px;
     margin-bottom: 90px;
 }
 .logo_head{
     font-size: 22px;
     font-weight: bold;
-    color: #222a41;
+    color: rgb(108,77,56);
     margin-top: 24px;
 }
 .logo_text{
     font-size: 16px;
-    color: #222a41;
+    color: rgb(17,17,17);
     margin-top: 19px;
     margin-left: 40px;
     margin-right: 40px;
@@ -87,4 +87,9 @@
     .sub{
         padding-bottom: 13px;
     }
+    .icon {
+        color: white;
+        margin-bottom: 10px;
+    }
+    
 }

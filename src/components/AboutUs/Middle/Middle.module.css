@@ -6,7 +6,7 @@
     font-family: 'Poppins';
     font-size: 50px;
     font-weight: bold;
-    color: #222a41;
+    color: rgb(108,77,56);
     margin-bottom: 30px;
 }
 .mainContent{
@@ -25,7 +25,7 @@
     font-family: 'Poppins';
     font-size: 20px;
     font-weight: bold;
-    color: #222a41;
+    color: rgb(108,77,56);
     margin-bottom: 23px;
     margin-top: 33px;
 }

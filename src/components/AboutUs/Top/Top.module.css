@@ -10,13 +10,13 @@
     font-family: 'Poppins';
     font-size: 34px;
     font-weight: bold;
-    color: #2e2d26;
+    color: rgb(108,77,56);
     margin-top: 36px;
 }
 .content{
     font-family: 'Poppins';
     font-size: 14px;
-    color: #989e9d;
+    color: #000000;
     margin-top: 14px;
     width: 700px;
     margin-left: auto;
@@ -30,7 +30,7 @@
     font-family: 'Poppins';
     font-size: 50px;
     font-weight: bold;
-    color: #0f0a18;
+    color: rgb(108,77,56);
     text-align: left;
     margin-bottom: 4px;
     margin-top: 119px;
@@ -55,7 +55,7 @@
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
-    color: #4f4c86;
+    color: rgb(108,77,56);
     text-align: left;
 }
 .contn{

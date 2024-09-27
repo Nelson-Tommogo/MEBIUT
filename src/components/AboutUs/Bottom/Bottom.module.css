@@ -8,7 +8,7 @@
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
-    color: #4f4c86;
+    color: rgb(108,77,56);
     text-align: left;
     margin-top: 135px;
     margin-left: 150px;
@@ -16,7 +16,7 @@
 .content{
     font-family: 'Poppins';
     font-size: 14px;
-    color: #0f0a18;
+    color: rgb(108,77,56);
     opacity: .5;
     text-align: left;
     margin-left: 150px;
@@ -30,14 +30,14 @@
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
-    color: #4f4c86;
+    color: rgb(108,77,56);
     text-align: left;
     margin-top: 135px;
 }
 .content1{
     font-family: 'Poppins';
     font-size: 14px;
-    color: #0f0a18;
+    color: rgb(108,77,56);
     opacity: .5;
     text-align: left;
     margin-right: 100px;
