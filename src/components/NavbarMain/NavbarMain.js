@@ -3,32 +3,15 @@ import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import styles from "./NavbarMain.module.css";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "/home/pundit/miritus-main/src/assets/logo-no-background.png"; // Import your logo image
+import logo from './logo.png'; // Assuming logo.png is in the same folder
 
 const NavbarMain = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
-  const [showRegistrationDropdown, setShowRegistrationDropdown] = useState(false);
   const [activeNav, setActiveNav] = useState([true, false, false, false, false]);
   const [expand, setExpand] = useState(false);
 
   const closeNav = () => {
     setExpand(false);
-  };
-
-  const showServicesDropdownHandler = () => {
-    setShowServicesDropdown(true);
-  };
-
-  const hideServicesDropdownHandler = () => {
-    setShowServicesDropdown(false);
-  };
-
-  const showRegistrationDropdownHandler = () => {
-    setShowRegistrationDropdown(true);
-  };
-
-  const hideRegistrationDropdownHandler = () => {
-    setShowRegistrationDropdown(false);
   };
 
   useEffect(() => {
@@ -61,12 +44,8 @@ const NavbarMain = () => {
         expanded={expand}
       >
         <Container>
-          <Navbar.Brand href="/">
-            <img
-              src={logo}
-              alt="Logo"
-              style={{ height: "40px" }} // Adjust the height as needed
-            />
+          <Navbar.Brand href="/" className={styles.logo}>
+            <img src={logo} alt="Mebiut Logo" style={{ width: '140px', height: 'auto', marginRight: '8px' }} />
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -110,8 +89,8 @@ const NavbarMain = () => {
 
               <NavDropdown
                 show={showServicesDropdown}
-                onMouseEnter={showServicesDropdownHandler}
-                onMouseLeave={hideServicesDropdownHandler}
+                onMouseEnter={() => setShowServicesDropdown(true)}
+                onMouseLeave={() => setShowServicesDropdown(false)}
                 className={`nav-link ${styles.drop}`}
                 title={
                   <Link
@@ -132,7 +111,7 @@ const NavbarMain = () => {
               >
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <NavLink
-                    to="/CustomSauceDevelopment"
+                    to="/sMediaService"
                     onClick={() => {
                       handleActiveNav(3);
                       closeNav();
@@ -140,54 +119,6 @@ const NavbarMain = () => {
                     className={styles.dropdownText}
                   >
                     Custom Sauce Development
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <NavLink
-                    to="/qualityAssurance"
-                    onClick={() => {
-                      handleActiveNav(2);
-                      closeNav();
-                    }}
-                    className={styles.dropdownText}
-                  >
-                    Subscription Service
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <NavLink
-                    to="/cloudIoT"
-                    onClick={() => {
-                      handleActiveNav(2);
-                      closeNav();
-                    }}
-                    className={styles.dropdownText}
-                  >
-                    Corporate and Bulk Orders
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <NavLink
-                    to="/itConsultancy"
-                    onClick={() => {
-                      handleActiveNav(2);
-                      closeNav();
-                    }}
-                    className={styles.dropdownText}
-                  >
-                    Sauce Tastings and Workshops
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <NavLink
-                    to="/aiSolutions"
-                    onClick={() => {
-                      handleActiveNav(2);
-                      closeNav();
-                    }}
-                    className={styles.dropdownText}
-                  >
-                    Wholesale and Distribution
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
@@ -204,10 +135,9 @@ const NavbarMain = () => {
                 Contact Us
               </NavLink>
 
+              {/* New Registration Dropdown */}
               <NavDropdown
-                show={showRegistrationDropdown}
-                onMouseEnter={showRegistrationDropdownHandler}
-                onMouseLeave={hideRegistrationDropdownHandler}
+                show={false} // Adjust as needed
                 className={`${styles.nav_text} nav-link ${activeNav[5] ? styles.active : ""}`}
                 title="Registration"
                 id="nav-registration-dropdown"
