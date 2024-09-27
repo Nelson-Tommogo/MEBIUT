@@ -93,4 +93,76 @@
     background-color: #9e785f;
     color: #fff;
   }
+  /* Overlay for the dialog */
+.dialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Dialog content container */
+.dialogContent {
+  background: white;
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  width: 320px; /* Small, rectangular size */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  text-align: center;
+}
+
+/* Dialog title */
+.dialogContent h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Dialog message */
+.dialogContent p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Close button styling */
+.closeDialogButton {
+  background-color: #4CAF50; /* Green for success */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.closeDialogButton:hover {
+  background-color: #45a049;
+}
+
+/* For error dialog button */
+.errorButton {
+  background-color: #FF4C4C; /* Red for error */
+  color: white;
+}
+
+.errorButton:hover {
+  background-color: #FF1C1C;
+}
+
+/* Make the text elements responsive */
+@media (max-width: 400px) {
+  .dialogContent {
+    width: 90%; /* Make dialog responsive on smaller screens */
+  }
+}
+
   

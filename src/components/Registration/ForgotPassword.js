@@ -1,18 +1,33 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './ForgotPassword.module.css'; // Import CSS module
-
+import styles from './ForgotPassword.module.css'; 
+import { sendPasswordResetEmail } from 'firebase/auth'; 
+import { auth } from './firebase'; 
+import Modal from 'react-modal';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log('Password reset link sent to:', email);
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setIsSuccessModalOpen(true);
+    } catch (error) {
+      setErrorMessage(error.message);
+      setIsErrorModalOpen(true); 
+    }
+  };
+
+  const closeModal = () => {
+    setIsSuccessModalOpen(false);
+    setIsErrorModalOpen(false);
   };
 
   return (
@@ -40,6 +55,32 @@ const ForgotPassword = () => {
       <p className={styles.backLink}>
         Remembered your password? <NavLink to="/login" className={styles.link}>Log in</NavLink>
       </p>
+
+      {/* Success Modal */}
+      <Modal
+        isOpen={isSuccessModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Password Reset Email Sent"
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <h2>Password Reset Email Sent</h2>
+        <p>An email has been sent to {email} with instructions to reset your password.</p>
+        <button onClick={closeModal} className={styles.modalButton}>Close</button>
+      </Modal>
+
+      {/* Error Modal */}
+      <Modal
+        isOpen={isErrorModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Error Sending Email"
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <h2>Error Sending Email</h2>
+        <p>{errorMessage}</p>
+        <button onClick={closeModal} className={styles.modalButton}>Close</button>
+      </Modal>
     </div>
   );
 };
