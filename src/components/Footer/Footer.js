@@ -42,15 +42,15 @@ const Footer = () =>{
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
                             <p className={styles.head}>Services</p>
                             <p className={styles.text}>00618 Ruaraka Nairobi, Kenya</p>
-                            <p className={styles.text}>mebiutkenya@gmail.com</p>
-                            <p className={styles.text}>(+254) 113-792-645 </p>
+                            <p className={styles.text}>info@mebiut.com</p>
+                            <p className={styles.text}>(+254) 59735505 </p>
 
                         </div>
 
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
                             <p className={styles.head}>Head Office</p>
                             <p className={styles.text}>00618 Ruaraka Nairobi, Kenya</p>
-                            <p className={styles.text}>mebiutkenya@gmail.com</p>
+                            <p className={styles.text}>info@mebiut.com</p>
                             <p className={styles.text}>(+254) 113-792-645 </p>
                         </div>
 

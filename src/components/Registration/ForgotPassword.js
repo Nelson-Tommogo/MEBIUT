@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './ForgotPassword.module.css'; 
 import { sendPasswordResetEmail } from 'firebase/auth'; 
-import { auth } from './firebase'; 
+import { auth } from '../../firebase'; 
 import Modal from 'react-modal';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
