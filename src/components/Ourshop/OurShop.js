@@ -4,30 +4,31 @@ import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer";
 
-// Placeholder products data
 const products = [
   {
     id: 1,
-    name: 'Product 1',
-    description: 'This is the description for product 1',
-    image: 'https://via.placeholder.com/150',
+    name: 'Kenyan Taste',
+    description: '340g',
+    image: 'src/assets/home/product2',
     price: 1000,
   },
   {
     id: 2,
-    name: 'Product 2',
-    description: 'This is the description for product 2',
-    image: 'https://via.placeholder.com/150',
+    name: 'Kenyan Taste',
+    description: '340g',
+    image: 'src/assets/home/product2',
     price: 2000,
   },
   {
     id: 3,
-    name: 'Product 3',
-    description: 'This is the description for product 3',
-    image: 'https://via.placeholder.com/150',
+    name: 'Mayonnaise',
+    description: '340g',
+    image: 'src/assets/home/product2',
     price: 3000,
   },
 ];
+
+
 
 const OurShop = () => {
   const [cartItems, setCartItems] = useState([]);
