@@ -9,6 +9,7 @@ import SignUp from '../components/Registration/SignUp';
 import Login from '../components/Registration/Login';
 import ForgotPassword from '../components/Registration/ForgotPassword';
 import OurShop from '../components/Ourshop/OurShop';
+import Payment from '../components/Ourshop/Payment';
 
 const routes = [
   {
@@ -54,6 +55,10 @@ const routes = [
   {
     component: OurShop,
     to: '/OurShop'
+  },
+  {
+    component: <Payment />,
+    to: '/Payment'
   }
 ];
 
