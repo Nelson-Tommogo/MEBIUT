@@ -16,7 +16,7 @@ function App() {
   // Initialize AOS animations
   useEffect(() => {
     AOS.init({
-      disable: 'mobile',
+      enable:"mobile",
       startEvent: 'DOMContentLoaded',
       offset: 70,
       duration: 800,
