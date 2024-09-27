@@ -12,7 +12,7 @@ import OurShop from '../components/Ourshop/OurShop';
 
 const routes = [
   {
-    component: Home,  // Pass the component reference, not JSX
+    component: Home,
     to: '/'
   },
   {
