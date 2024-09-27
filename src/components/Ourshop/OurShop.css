@@ -43,8 +43,9 @@
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 150px; 
+  height: 150px;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 

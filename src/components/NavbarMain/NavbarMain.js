@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import styles from "./NavbarMain.module.css";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from './logo.png'; // Assuming logo.png is in the same folder
 
 const NavbarMain = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const [showRegistrationDropdown, setShowRegistrationDropdown] = useState(false);
   const [activeNav, setActiveNav] = useState([true, false, false, false, false]);
   const [expand, setExpand] = useState(false);
 
@@ -135,10 +135,12 @@ const NavbarMain = () => {
                 Contact Us
               </NavLink>
 
-              {/* New Registration Dropdown */}
+              {/* Registration Dropdown */}
               <NavDropdown
-                show={false} // Adjust as needed
-                className={`${styles.nav_text} nav-link ${activeNav[5] ? styles.active : ""}`}
+                show={showRegistrationDropdown}
+                onMouseEnter={() => setShowRegistrationDropdown(true)}
+                onMouseLeave={() => setShowRegistrationDropdown(false)}
+                className={`${styles.nav_text} nav-link`}
                 title="Registration"
                 id="nav-registration-dropdown"
               >
