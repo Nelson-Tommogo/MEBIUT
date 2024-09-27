@@ -6,6 +6,11 @@ import './App.css';
 import routes from './router/route';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUtensils, faTruck, faBoxOpen, faChalkboardTeacher, faStore } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faUtensils, faTruck, faBoxOpen, faChalkboardTeacher, faStore);
+
 
 function App() {
   // Initialize AOS animations

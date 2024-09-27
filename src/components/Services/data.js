@@ -1,44 +1,41 @@
-import seo from '../../assets/home/seo.png';
-import web from '../../assets/home/web.png';
-import seo1 from '../../assets/individualService/Image.png';
-import seo2 from '../../assets/individualService/Image_2.png';
+import { faSearch, faGlobe, faTruck, faUtensils, faStore, faBook } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
     {
         id: 1,
         heading: 'Custom Sauce Development',
-        content: 'Customers can create personalized sauces at affordable prices, perfect for restaurants and events. Suscribe to get the service',
+        content: 'Customers can create personalized sauces at affordable prices, perfect for restaurants and events. Subscribe to get the service',
         to: '/',
-        icon: seo,
+        icon: faUtensils, // FontAwesome icon for food-related content
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam'
+                img: '/assets/individualService/Image.png', // Leave other data unchanged
+                content: 'Lorem ipsum dolor sit amet...'
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam'
+                img: '/assets/individualService/Image_2.png',
+                content: 'Lorem ipsum dolor sit amet...'
             },
         ]
     },
     {
         id: 2,
         heading: 'Subscription Service',
-        content: 'With our subscription service, You will receive a curated selection of Mebiut sauces monthly or quarterly. This convenient model ensures a steady supply and encourages regular use.',
+        content: 'With our subscription service, you will receive a curated selection of Mebiut sauces monthly or quarterly. This convenient model ensures a steady supply and encourages regular use.',
         to: '/',
-        icon: web,
+        icon: faGlobe, // FontAwesome icon
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Enjoy hassle-free deliveries of our top-quality sauces right to your door each month.'
+                img: '/assets/individualService/Image.png',
+                content: 'Enjoy hassle-free deliveries...'
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'Customize your subscription based on your preferences and never run out of your favorites again.'
+                img: '/assets/individualService/Image_2.png',
+                content: 'Customize your subscription...'
             },
         ]
     },
@@ -47,17 +44,17 @@ const data = [
         heading: 'Corporate and Bulk Orders',
         content: 'Businesses can order in bulk for consistent supply, ensuring cost savings and increased profits.',
         to: '/',
-        icon: seo,
+        icon: faTruck, // FontAwesome icon for bulk orders
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Benefit from special pricing and personalized service for your corporate needs and events.'
+                img: '/assets/individualService/Image.png',
+                content: 'Benefit from special pricing...'
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'We provide seamless ordering and delivery for your large-scale events and corporate functions.'
+                img: '/assets/individualService/Image_2.png',
+                content: 'We provide seamless ordering...'
             },
         ]
     },
@@ -66,17 +63,17 @@ const data = [
         heading: 'Sauce Tastings and Workshops',
         content: 'Engaging workshops let customers explore flavors and pairings, building loyalty and encouraging purchases.',
         to: '/',
-        icon: seo,
+        icon: faSearch, // FontAwesome icon for exploring or discovering
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Join us for engaging workshops that enhance your culinary skills and sauce knowledge.'
+                img: '/assets/individualService/Image.png',
+                content: 'Join us for engaging workshops...'
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'Taste and learn about our sauces, discovering new ways to incorporate them into your dishes.'
+                img: '/assets/individualService/Image_2.png',
+                content: 'Taste and learn about our sauces...'
             },
         ]
     },
@@ -85,40 +82,39 @@ const data = [
         heading: 'Wholesale and Distribution',
         content: 'Retailers can stock Mebiut sauces, broadening their offerings and generating additional sales revenue.',
         to: '/',
-        icon: seo,
+        icon: faStore, // FontAwesome icon for wholesale and distribution
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Partner with us to access a wide range of sauces that can delight your customers.'
+                img: '/assets/individualService/Image.png',
+                content: 'Partner with us to access a wide range of sauces...'
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'Our wholesale program ensures you get the best products at competitive prices.'
+                img: '/assets/individualService/Image_2.png',
+                content: 'Our wholesale program ensures...'
             },
         ]
     },
     {
         id: 6,
         heading: 'Recipe Education',
-        content: 'We do recipe eductaion to everyone for a subscription fee of ksh 100.',
+        content: 'We offer recipe education for a subscription fee of Ksh 100.',
         to: '/',
-        icon: seo,
+        icon: faBook, // FontAwesome icon for education
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo1,
-                content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam'
+                img: '/assets/individualService/Image.png',
+                content: ''
             },
             {
                 heading: 'Get The Maximum Benefits',
-                img: seo2,
-                content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam'
+                img: '/assets/individualService/Image_2.png',
+                content: ''
             },
         ]
-    },
-
-]
+    }
+];
 
 export default data;
