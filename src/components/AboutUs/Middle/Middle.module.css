@@ -1,27 +1,37 @@
-.contain{
+.contain {
     padding-top: 146px;
     padding-bottom: 145px;
 }
-.mainHead{
+
+.mainHead {
     font-family: 'Poppins';
     font-size: 50px;
     font-weight: bold;
     color: rgb(108,77,56);
     margin-bottom: 30px;
 }
-.mainContent{
+
+.mainContent {
     font-family: 'Poppins';
     font-size: 20px;
     color: #989e9d;
     padding-bottom: 110px;
 }
-.box{
+
+.box {
     background-color: rgba(79, 76, 134, 0.1);
     border: solid 2px rgba(220, 216, 226, 0.5);
     border-radius: 10px;
     padding: 40px 27px 55.4px 28px;
+    text-align: center; /* Center align content in the box */
 }
-.head{
+
+.img {
+    width: 80%; /* Set to a smaller size */
+    height: auto;
+}
+
+.head {
     font-family: 'Poppins';
     font-size: 20px;
     font-weight: bold;
@@ -29,7 +39,8 @@
     margin-bottom: 23px;
     margin-top: 33px;
 }
-.content{
+
+.content {
     font-family: 'Poppins';
     font-size: 18px;
     color: #222a41;
@@ -37,49 +48,50 @@
 }
 
 @media screen and (max-width: 992px) {
-    .mainHead{
+    .mainHead {
         font-size: 30px;
     }
-    .mainContent{
+    .mainContent {
         font-size: 18px;
         padding-bottom: 70px;
     }
-    .contain{
+    .contain {
         padding-top: 100px;
         padding-bottom: 100px;
     }
-    .box{
+    .box {
         padding: 20px 10px 20px;
     }
-    .head{
+    .head {
         margin-bottom: 15px;
         margin-top: 15px;
     }
-    .content{
+    .content {
         font-size: 16px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .box{
+    .box {
         margin-bottom: 10px;
     }
 }
+
 @media screen and (max-width: 650px) {
-    .contain{
+    .contain {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    .mainHead{
+    .mainHead {
         font-size: 25px;
     }
-    .mainContent{
+    .mainContent {
         font-size: 16px;
     }
-    .head{
+    .head {
         font-size: 18px;
     }
-    .content{
+    .content {
         font-size: 15px;
     }
 }

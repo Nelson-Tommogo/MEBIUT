@@ -1,5 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPepperHot, faTruck, faUsers, faClipboardList, faBoxOpen } from '@fortawesome/free-solid-svg-icons';
+import image1 from '../../assets/home/r1.jpeg';
+import image2 from '../../assets/home/r2.jpeg';
+import image3 from '../../assets/home/r3.jpeg';
+import image4 from '../../assets/home/r4.jpeg';
+import image5 from '../../assets/home/r5.jpeg';
+import image6 from '../../assets/home/r6.jpeg';
 
 const data = [
     {
@@ -9,12 +13,12 @@ const data = [
         contents: [
             {
                 heading: 'Personalized Recipes',
-                icon: <FontAwesomeIcon icon={faPepperHot} />,
+                icon: image1, 
                 content: 'Collaborate with our chefs to design sauces that fit your taste preferences, with a focus on local flavors and ingredients.'
             },
             {
                 heading: 'Quality Ingredients',
-                icon: <FontAwesomeIcon icon={faClipboardList} />,
+                icon: image2, 
                 content: 'We use only the finest ingredients to ensure your custom sauce is both delicious and high-quality, reflecting Kenyan culinary traditions.'
             },
         ]
@@ -26,12 +30,12 @@ const data = [
         contents: [
             {
                 heading: 'Convenient and Flexible',
-                icon: <FontAwesomeIcon icon={faTruck} />,
+                icon: image3, 
                 content: 'Choose from various subscription plans that suit your lifestyle and enjoy hassle-free sauce deliveries, ensuring you never run out of your favorite flavors.'
             },
             {
                 heading: 'Exclusive Offers',
-                icon: <FontAwesomeIcon icon={faUsers} />,
+                icon: image4, 
                 content: 'Subscribers receive special discounts and early access to new products and flavors, including limited-edition Kenyan sauces.'
             },
         ]
@@ -43,12 +47,12 @@ const data = [
         contents: [
             {
                 heading: 'Tailored Solutions',
-                icon: <FontAwesomeIcon icon={faClipboardList} />,
+                icon: image5, 
                 content: 'Work with our team to find the best sauce solutions for your corporate events or food service needs, ensuring every dish is a hit.'
             },
             {
                 heading: 'Competitive Pricing',
-                icon: <FontAwesomeIcon icon={faBoxOpen} />,
+                icon: image6, 
                 content: 'Enjoy competitive pricing and reliable delivery for all your bulk sauce orders, helping you save while providing quality products.'
             },
         ]
@@ -60,12 +64,12 @@ const data = [
         contents: [
             {
                 heading: 'Hands-On Experience',
-                icon: <FontAwesomeIcon icon={faPepperHot} />,
+                icon: image1,
                 content: 'Participate in hands-on workshops where you can taste and learn about various sauces, including our signature mayonnaise.'
             },
             {
                 heading: 'Expert Guidance',
-                icon: <FontAwesomeIcon icon={faUsers} />,
+                icon: image2,
                 content: 'Our experienced chefs provide guidance to help you create your own signature sauces, inspired by Kenyan cuisine.'
             },
         ]
@@ -77,12 +81,12 @@ const data = [
         contents: [
             {
                 heading: 'Reliable Supply',
-                icon: <FontAwesomeIcon icon={faTruck} />,
+                icon: image3, 
                 content: 'Ensure a steady supply of sauces for your store with our efficient wholesale distribution network, catering to local tastes.'
             },
             {
                 heading: 'Diverse Product Range',
-                icon: <FontAwesomeIcon icon={faBoxOpen} />,
+                icon: image4, 
                 content: 'Choose from a diverse range of sauces to appeal to different customer tastes and preferences, ensuring variety for your customers.'
             },
         ]

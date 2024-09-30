@@ -1,9 +1,20 @@
-.img1{
-    width: 100%;
+.img1 {
+    width: 80%;
+    height: auto; 
+    margin: 0 auto; 
+    display: block;
 }
 .img2{
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: auto; 
+    margin: 0 auto; 
+    display: block;
+}
+.img3{
+    width: 80%;
+    height: auto; 
+    margin: 0 auto; 
+    display: block;
 }
 .topContain{
     padding-left: 120px;
@@ -170,8 +181,5 @@
     }
     .middleContain{
         padding-left: 50px !important;
-    }
-    .img1{
-        margin-top: 50px;
     }
 }

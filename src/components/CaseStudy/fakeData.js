@@ -20,27 +20,27 @@ const fakeData = [
     },
     {
         id: 3,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img3,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     {
         id: 4,
         title: 'Kenyan Taste',
         img: img4,
-        category: 'Kenyan Taste'
+        category: 'kenyan taste'
     },
     {
         id: 5,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img5,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     {
         id: 6,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img6,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     
 ];

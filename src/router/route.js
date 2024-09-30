@@ -56,10 +56,10 @@ const routes = [
     component: OurShop,
     to: '/OurShop'
   },
-  {
-    component: <Payment />,
-    to: '/Payment'
-  }
+{
+      component: Payment, 
+      to: '/Payment'
+    }
 ];
 
 export default routes;

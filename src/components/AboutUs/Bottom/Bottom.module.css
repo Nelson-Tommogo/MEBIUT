@@ -1,95 +1,108 @@
-.contain{
+.contain {
     padding-bottom: 130px;
 }
-.row{
+
+.row {
     margin-top: 130px !important;
 }
-.head{
+
+.head {
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
-    color: rgb(108,77,56);
+    color: rgb(108, 77, 56);
     text-align: left;
     margin-top: 135px;
     margin-left: 150px;
 }
-.content{
+
+.content {
     font-family: 'Poppins';
     font-size: 14px;
-    color: rgb(108,77,56);
+    color: rgb(108, 77, 56);
     opacity: .5;
     text-align: left;
     margin-left: 150px;
 }
-.img{
-    width: 100%;
-    height: auto;
-    margin-left: -150px;
+
+/* Reduce image sizes */
+.img, .img1 {
+    width: 70%;  /* Reduced the width to 70% for better size */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: auto; /* Center the images */
+    margin-right: auto; /* Center the images */
+    display: block; /* Ensure images are treated as block elements for centering */
 }
-.head1{
+
+.head1 {
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
-    color: rgb(108,77,56);
+    color: rgb(108, 77, 56);
     text-align: left;
     margin-top: 135px;
 }
-.content1{
+
+.content1 {
     font-family: 'Poppins';
     font-size: 14px;
-    color: rgb(108,77,56);
+    color: rgb(108, 77, 56);
     opacity: .5;
     text-align: left;
     margin-right: 100px;
 }
-.img1{
-    width: 100%;
-    height: auto;
-    margin-left: 90px;
+
+.img1 {
+    width: 70%;  /* Apply the same width reduction for .img1 */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: auto; /* Center the images */
+    margin-right: auto; /* Center the images */
+    display: block; /* Ensure images are treated as block elements for centering */
 }
 
+/* Media queries for responsiveness */
 @media screen and (max-width: 992px) {
-    .head{
+    .head {
         margin-left: 0px;
         margin-top: 90px;
     }
-    .content{
+
+    .content {
         margin-left: 0px;
     }
-    .img{
-        margin-left: -60px;
+
+    .img, .img1 {
+        width: 60%; /* Further reduce the image width for medium screens */
     }
-    .img1{
-        margin-left: 40px;
-    }
-    .head1{
+
+    .head1 {
         margin-top: 90px;
     }
-    .content1{
+
+    .content1 {
         margin-right: 0px;
     }
-    .row{
+
+    .row {
         margin-top: 80px !important;
     }
-    .contain{
+
+    .contain {
         padding-bottom: 80px;
     }
-    
 }
+
 @media screen and (max-width: 768px) {
-    .img, .img1{
-        margin-left: 0px;
+    .img, .img1 {
+        width: 50%; 
     }
-    .head, .head1{
-        margin-top: 50px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .head, .head1{
+
+    .head, .head1 {
         font-size: 22px;
         margin-top: 30px;
     }
-    .row{
+
+    .row {
         margin-top: 50px !important;
     }
 }
