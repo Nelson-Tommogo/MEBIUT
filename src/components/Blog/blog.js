@@ -105,7 +105,7 @@ const Blog = () => {
           <div key={blog.id} className="blog-post">
             <img src={blog.image} alt={blog.title} className="blog-image" />
             <h2>{blog.title}</h2>
-            <p>{expandedBlogId === blog.id ? blog.fullContent : blog.content.substring(0, 100)}... <a href="#" onClick={() => toggleFullContent(blog.id)}>{expandedBlogId === blog.id ? 'Read Less' : 'Read More'}</a></p>
+            <p>{expandedBlogId === blog.id ? blog.fullContent : blog.content.substring(0, 100)}... <a href="mebiutblog.com" onClick={() => toggleFullContent(blog.id)}>{expandedBlogId === blog.id ? 'Read Less' : 'Read More'}</a></p>
             <div className="blog-info">
               <span>By {blog.author}</span> | <span>{blog.date}</span> | <span>{blog.category}</span>
             </div>

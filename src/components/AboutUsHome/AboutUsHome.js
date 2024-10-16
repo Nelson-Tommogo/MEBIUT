@@ -9,7 +9,7 @@ const AboutUsHome = () => {
     const navigate = useNavigate(); // Initialize useNavigate
 
     const handleReachUsClick = () => {
-        navigate('./team'); // Navigate to the team page
+        navigate('/team'); // Navigate to the team page
     };
 
     return (
