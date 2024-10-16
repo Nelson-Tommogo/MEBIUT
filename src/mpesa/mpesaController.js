@@ -1,53 +1,29 @@
 import unirest from 'unirest';
-import { baseURL } from './mpesaConfig';
-import { generateToken } from './mpesaUtils';
 
-// STK Push function
-export async function initiatePayment(req, res) {
-  const { phoneNumber, amount, accountReference, transactionDesc } = req.body;
-
-  try {
-    const token = await generateToken();
-    
-    const paymentRequest = unirest("POST", `${baseURL}/mpesa/stkpush/v1/processrequest`);
-
-    paymentRequest.headers({
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json"
+let req = unirest('POST', 'https://sandbox.safaricom.co.ke/mpesa/b2b/v1/paymentrequest')
+    .headers({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer F9oc3lwdfN19A9dqtVEzi4lPuYJn'
+    })
+    .send(JSON.stringify({
+        "Initiator": "testapi", // Make sure this is a string
+        "SecurityCredential": "H3TcHB0vG3kQYPmoaunCe0lCNsqSwm0PtFYrDWz2S3S7f5um9LRKDqKc3Hb972l7wLeVSwuLxQH7VJvOApWIS1syVa27/pNm0TIL0NoBUEyKlSgabFSCw2aj3AqTY+3/+7rTIIRrrBSQu3PxtIt8oRAtIrZ/r44+ddL4hVbB7BmRFFvtG3h2c2b4I6n6mozvVnNWPls7tWGnNb2atgt49mNavQpU57sSV7Can2yw7TzY1JWvkmHYNpyKIeIQsBBD8XmxdSOPwgdbGo4ahst7i9+FLgJhIz5H0yAQ7DGJvZJspyBPt+aKaHJ20WbMcbM1VEdTNXAyuhBfohZwr1G06Q==",
+        "CommandID": "BusinessPayBill",
+        "SenderIdentifierType": "4",
+        "RecieverIdentifierType": 4,
+        "Amount": 1,
+        "PartyA": 600980,
+        "PartyB": 600000,
+        "AccountReference": "353353",
+        "Requester": "254708374149",
+        "Remarks": "ok",
+        "QueueTimeOutURL": "https://mydomain.com/b2b/queue/",
+        "ResultURL": "https://mydomain.com/b2b/result/"
+    }))
+    .end(res => {
+        if (res.error) throw new Error(res.error);
+        console.log(res.raw_body);
     });
 
-    // Get the current timestamp in the format 'yyyyMMddHHmmss'
-    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, '').slice(0, 14);
-    
-    // Encode password (base64(BusinessShortCode + Passkey + Timestamp))
-    const shortCode = "174379";  // Business Short Code
-    const passkey = "YourLipaNaMpesaOnlinePasskey";
-    const password = Buffer.from(`${shortCode}${passkey}${timestamp}`).toString('base64');
 
-    // Send the STK push request to Safaricom
-    paymentRequest.send({
-      "BusinessShortCode": shortCode, // Replace with your Business Shortcode
-      "Password": password,
-      "Timestamp": timestamp,
-      "TransactionType": "CustomerPayBillOnline",
-      "Amount": amount, // Amount to be paid
-      "PartyA": phoneNumber, // Customer's phone number
-      "PartyB": shortCode, // Paybill or Buy Goods number
-      "PhoneNumber": phoneNumber, // Phone number initiating the payment
-      "CallBackURL": "https://yourdomain.com/callback", // Your callback URL
-      "AccountReference": accountReference || "AccountRef", // Reference for the payment, e.g., invoice number
-      "TransactionDesc": transactionDesc || "Payment for goods" // Description of the transaction
-    });
-
-    paymentRequest.end(function (response) {
-      if (response.error) {
-        res.status(500).json({ error: response.error });
-      } else {
-        res.status(200).json(response.body); // Return Safaricom's response
-      }
-    });
-
-  } catch (error) {
-    res.status(500).json({ error: 'Payment initiation failed', details: error });
-  }
-}
+    //Endpoint: https://sandbox.safaricom.co.ke/mpesa/b2b/v1/paymentrequest(Post)

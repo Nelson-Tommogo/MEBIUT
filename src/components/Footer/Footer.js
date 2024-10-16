@@ -58,6 +58,7 @@ const Footer = () =>{
                             <p className={styles.head}>Opening Hour</p>
                             <p className={styles.text}>Mon - Fri : 09:00 - 20:00</p>
                             <p className={styles.text}>Sat - Sun : 10.30 - 22:00</p>
+                            <p className={styles.text}>Order/Purchase : 24 hours</p>
 
                         </div>
                     </div>

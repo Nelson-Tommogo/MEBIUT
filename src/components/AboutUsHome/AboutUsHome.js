@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import styles from './AboutUsHome.module.css';
-import img1 from '../../assets/home/about1.png';
-import img2 from '../../assets/home/about2.png';
-import img3 from '../../assets/home/about3.png';
+import img1 from '../../assets/home/05.jpeg';
+import img2 from '../../assets/home/01.jpeg';
+import img3 from '../../assets/home/03.jpeg';
 
 const AboutUsHome = () => {
     const navigate = useNavigate(); // Initialize useNavigate

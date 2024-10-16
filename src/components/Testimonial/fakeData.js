@@ -46,6 +46,6 @@ export const fakeData = [
         img: image6,
         name: 'Emmanuel Agwenyi',
         profession: 'Health Diets Champion',
-        message: "“Fantastic taste! Mebiut’s sauces have completely changed my cooking game. I love how versatile they are, and they make everything taste amazing. I highly recommend them to anyone looking to elevate their meals!"
+        message: "I recently tried MEBIUT’s locally made mayonnaise and Kenyan Taste sauce, and it’s a game-changer! The creamy mayo pairs perfectly with the tangy Kenyan Taste sauce, enhancing any meal. True to their slogan, Make Every Bite Unforgettable, MEBIUT delivers an exceptional taste experience. Proudly Kenyan, this combo is a must-try!"
     },
 ]
