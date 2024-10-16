@@ -10,6 +10,9 @@ import Login from '../components/Registration/Login';
 import ForgotPassword from '../components/Registration/ForgotPassword';
 import OurShop from '../components/Ourshop/OurShop';
 import Payment from '../components/Ourshop/Payment';
+import Blog from "../components/Blog/blog";
+import Team from "../components/Team/Team";
+
 
 const routes = [
   {
@@ -59,7 +62,16 @@ const routes = [
 {
       component: Payment, 
       to: '/Payment'
-    }
-];
+    },
+    {
+      component: Blog,
+      to: '/blog'
+    },
+    {
+      component: Team,
+      to: '/team'
+    },
+  
+  ];
 
 export default routes;

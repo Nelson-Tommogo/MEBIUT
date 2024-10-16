@@ -9,8 +9,8 @@ const images = [
   { src: require('../../assets/4.jpg'), alt: "Image 1", text: "Discover the Authentic Flavors of Kenya", buttonLabel: "ORDER NOW", buttonLink: "/OurShop" },
   { src: require('../../assets/om.jpeg'), alt: "Image 2", text: "Experience Traditional Kenyan Cuisine", buttonLabel: "EXPLORE MENU", buttonLink: "/services" },
   { src: require('../../assets/om0.jpeg'), alt: "Image 3", text: "Savor Every Bite with Our Fresh Ingredients", buttonLabel: "SEE SPECIALS", buttonLink: "" },
-  { src: require('../../assets/home2.jpg'), alt: "Image 4", text: "Join Us for an Unforgettable Meal", buttonLabel: "MAKE RESERVATION", buttonLink: "/contactUs" },
-  { src: require('../../assets/6.jpg'), alt: "Image 5", text: "Taste the Rich Heritage of Kenyan Dishes", buttonLabel: "VIEW GALLERY", buttonLink: "" },
+  { src: require('../../assets/home2.jpg'), alt: "Image 4", text: "Join Us for an Unforgettable Meal", buttonLabel: "MEET OUR TEAM", buttonLink: "/team" },
+  { src: require('../../assets/6.jpg'), alt: "Image 5", text: "Taste the Rich Heritage of Kenyan Dishes", buttonLabel: "VIEW BLOG", buttonLink: "/blog" },
 ];
 
 const PreviousArrow = ({ onClick }) => (

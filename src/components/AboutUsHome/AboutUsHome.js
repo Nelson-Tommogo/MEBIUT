@@ -9,7 +9,7 @@ const AboutUsHome = () => {
     const navigate = useNavigate(); // Initialize useNavigate
 
     const handleReachUsClick = () => {
-        navigate('/contactUs'); // Navigate to the ContactUs page
+        navigate('./team'); // Navigate to the team page
     };
 
     return (
@@ -29,7 +29,7 @@ const AboutUsHome = () => {
                                 className={`btn custom_btn ${styles.btn}`} 
                                 onClick={handleReachUsClick} 
                             >
-                                Reach Us
+                                MEET OUR TEAM
                             </button>
                         </div>
                     </div>
