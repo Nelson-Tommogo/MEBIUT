@@ -43,6 +43,41 @@
     background-color: #9e785f !important;
 }
 
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Restrict the width for better alignment */
+    margin: 0 auto; /* Center the container horizontally */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better focus */
+}
+
+.textContainer .text {
+    margin-bottom: 15px; /* Space between text and button */
+    text-align: center;
+}
+
+.textContainer .btn {
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.textContainer .btn:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 715px) {
+    .textContainer {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+
 @media screen and (max-width: 1266px) {
     .text {
         font-size: 57px;

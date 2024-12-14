@@ -1,66 +1,63 @@
-.box{
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    padding-top: 75px;
-    padding-bottom: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
+.box {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 75px 10px 60px;
     margin-top: 24px;
     height: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
-.box:hover{
+
+.box:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    transform: scale(1.02);
-    transition: .5s ease;
+    transform: scale(1.05);
+    background-color: #6C4D38; /* Color change on hover */
 }
-.heading{
+
+.heading {
     font-size: 24px;
     color: #222a41;
     font-weight: bold;
     margin-top: 20px;
+    text-align: center;
 }
-.text{
+
+.text {
     font-size: 18px;
     color: #6d7783;
-    /* width: 80%; */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 90%;
 }
-.to{
+
+.form-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-container button {
+    background-color: #6c4d38;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    top: 00px;
-}
-.to:hover{
-    transform: scale(1.1);
+    transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 1000px) {
-    .heading{
-        font-size: 20px;
-    }
-    .text{
-        font-size: 16px;
-    }
-    
-}
-@media screen and (max-width: 992px) {
-    .box{
-        height: 400px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .box{
-        padding-right: 20px;
-        padding-left: 20px;
-        height: 350px;
-    }
-}
-
-@media screen and (max-width: 410px) {
-    .heading{
-        font-size: 18px;
-    }
-    .text{
-        font-size: 14px;
-    }
+.form-container button:hover {
+    background-color: #080605;
 }

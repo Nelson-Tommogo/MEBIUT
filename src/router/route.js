@@ -12,6 +12,8 @@ import OurShop from '../components/Ourshop/OurShop';
 import Payment from '../components/Ourshop/Payment';
 import Blog from "../components/Blog/blog";
 import Team from "../components/Team/Team";
+import ComplaintForm from "../components/ComplaintForm/ComplaintForm";
+
 
 
 const routes = [
@@ -70,6 +72,11 @@ const routes = [
     {
       component: Team,
       to: '/team'
+    },
+
+    {
+      component: ComplaintForm,
+      to: '/Complain-form'
     },
   
   ];
