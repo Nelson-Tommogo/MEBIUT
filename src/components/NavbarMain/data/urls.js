@@ -14,6 +14,11 @@ const navUrls = [
   {
     url: "/contact",
     text: "Contact",
+
+  },
+  {
+    url: "/blog",
+    text: "blog"
   },
 ];
 

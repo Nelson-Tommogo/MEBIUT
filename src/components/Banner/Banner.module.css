@@ -1,83 +1,169 @@
+/* Import slick carousel CSS */
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+
 .imgbox {
     height: 94vh;
-    background: url('../../assets/tomato.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    overflow: hidden; /* To ensure that images stay contained */
 }
-.center{
-    position: absolute;
-    text-align: center;
+
+.slideImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fit well */
+    display: block; /* Ensure images are visible */
+}
+.center {
+    position: absolute; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Ensure text appears above the image */
 }
-.text{
+
+.text {
     font-size: 67px;
-    /* width: 335px; */
     color: #fff;
     font-weight: 400;
 }
-.btn{
+
+.btn {
     width: 272px;
     height: 64px;
     font-size: 14px;
     background-color: #6C4D38 !important;
+    border: none;
+    cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #9e785f !important;
 }
 
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Restrict the width for better alignment */
+    margin: 0 auto; /* Center the container horizontally */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better focus */
+}
+
+.textContainer .text {
+    margin-bottom: 15px; /* Space between text and button */
+    text-align: center;
+}
+
+.textContainer .btn {
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.textContainer .btn:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 715px) {
+    .textContainer {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+
 @media screen and (max-width: 1266px) {
-    .text{
+    .text {
         font-size: 57px;
     }
-    .btn{
+    .btn {
         width: 250px;
         height: 58px;
     }
 }
 
 @media screen and (max-width: 1090px) {
-    .text{
+    .text {
         font-size: 47px;
     }
-    .btn{
+    .btn {
         width: 220px;
         height: 48px;
     }
 }
+
 @media screen and (max-width: 921px) {
-    .text{
+    .text {
         font-size: 37px;
     }
 }
+
 @media screen and (max-width: 715px) {
-    .text{
+    .text {
         font-size: 27px;
     }
-    .btn{
+    .btn {
         width: 160px;
         height: 38px;
     }
 }
+
 @media screen and (max-width: 524px) {
-    .text{
+    .text {
         width: 100%;
     }
     
-    .btn{
+    .btn {
         width: 140px;
         height: 36px;
         font-size: 12px;
     }
-    
 }
+
 @media screen and (max-width: 396px) {
-    .text{
+    .text {
         font-size: 20px;
     }
-    .btn{
+    .btn {
         width: 110px;
         font-size: 11px;
     }
+}
+.prevArrow, .nextArrow {
+    position: absolute;
+    top: 40%; /* Adjust this value to move the arrows higher or lower */
+    transform: translateY(-50%);
+    z-index: 3; /* Make sure arrows are above the images */
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Set a width for the arrow buttons */
+    height: 40px; /* Set a height for the arrow buttons */
+}
+
+.prevArrow {
+    left: 20px; /* Position on the left side */
+}
+
+.nextArrow {
+    right: 20px; /* Position on the right side */
+}
+
+.prevArrow:hover, .nextArrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}
+.prevArrow, .nextArrow {
+    top: 35%; /* Higher positioning */
+    transform: translateY(-50%);
 }

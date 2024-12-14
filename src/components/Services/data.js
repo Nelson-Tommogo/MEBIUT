@@ -6,11 +6,11 @@ const data = [
         heading: 'Custom Sauce Development',
         content: 'Customers can create personalized sauces at affordable prices, perfect for restaurants and events. Subscribe to get the service',
         to: '/',
-        icon: faUtensils, // FontAwesome icon for food-related content
+        icon: faUtensils, 
         contents: [
             {
                 heading: 'Get The Maximum Benefits',
-                img: '/assets/individualService/Image.png', // Leave other data unchanged
+                img: '/assets/individualService/Image.png', 
                 content: 'Lorem ipsum dolor sit amet...'
             },
             {

@@ -1,28 +1,36 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers, faGlobe, faClock, faBoxes } from '@fortawesome/free-solid-svg-icons';
 import styles from './Real.module.css';
-import improveImg from '../../assets/home/improves.png';
 
 const Real = () => {
+    const counters = [
+        { icon: faUsers, label: "Customers Served", value: "100,000+" },
+        { icon: faGlobe, label: "Country", value: "Kenya" },
+        { icon: faGlobe, label: "Counties Reached", value: "46" },
+        { icon: faClock, label: "Years of Experience", value: "25+" },
+        { icon: faBoxes, label: "Products Available", value: "200,000+" },
+    ];
+
     return (
-        <div className="mb-5 overflow-hidden">
-            <div className="row g-0">
-                <div className={`col-md-6 ${styles.imgDiv}`}>
-                    <img data-aos='slide-right' data-aos-offset="150" src={improveImg} alt="" className={styles.img} />
-                </div>
-                <div className="col-md-6">
-                    <div className={styles.text}>
-                        <p data-aos='slide-right' data-aos-offset="150" className={styles.heading}>Real</p>
-                        <p data-aos='slide-left' data-aos-offset="150" className={styles.subHeading}>Enhancing Customer Experiences in Kenya</p>
-                        <p data-aos='zoom-in' data-aos-offset="150" className={styles.content}>
-                            At Mebuit, we understand the unique tastes and preferences of our Kenyan customers. Our responsive web designs are crafted to reflect local culture and values, ensuring an engaging user experience. We leverage technology and analytics to create solutions that resonate with the Kenyan market, from the bustling streets of Nairobi to the coastal towns of Mombasa. Join us in transforming customer interactions through innovative design and customer-centric strategies.
-                        </p>
-                        <div data-aos='zoom-in' style={{ textAlign: 'left' }}>
-                            <button className={`btn custom_btn ${styles.btn}`}>LET&apos;S TALK</button>
+        <div className={styles.parentContainer}>
+            <div className={styles.textContainer}>
+                <p className={styles.heading}>OUR IMPACT</p>
+                <p className={styles.subHeading}>Enhancing Customer Experiences Globally</p>
+            </div>
+            <div className={styles.countersContainer}>
+                <div className={styles.counters}>
+                    {counters.map((counter, index) => (
+                        <div key={index} className={styles.counter}>
+                            <FontAwesomeIcon icon={counter.icon} size="3x" className={styles.icon} />
+                            <p className={styles.counterValue}>{counter.value}</p>
+                            <p className={styles.counterLabel}>{counter.label}</p>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default Real;

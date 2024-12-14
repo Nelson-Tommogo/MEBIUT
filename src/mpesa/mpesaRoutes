@@ -1,0 +1,9 @@
+const express = require('express');
+const mpesaController = require('./mpesaController');
+
+const router = express.Router();
+
+// Route to initiate payment (STK Push)
+router.post('/mpesa/payment', mpesaController.initiatePayment);
+
+module.exports = router;

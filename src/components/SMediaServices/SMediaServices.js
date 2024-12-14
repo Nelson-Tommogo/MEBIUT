@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './SMediaServices.module.css';
-import img1 from '../../assets/sMediaService/main.png';
-import img2 from '../../assets/sMediaService/middle1.png';
-import img3 from '../../assets/sMediaService/bottom1.png';
+import img1 from '../../assets/home/r1.jpeg';
+import img2 from '../../assets/home/02.jpeg';
+import img3 from '../../assets/home/lynn.jpg';
 
 const SMediaServices = () => {
     return (

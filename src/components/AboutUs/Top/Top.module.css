@@ -39,16 +39,18 @@
 .imgContain{
     margin-left: -90px;
 }
-.img1{
-    width: 100%;
-    height: auto;
+.img1 {
+    width: 50%; 
+    height: auto; 
+    max-height: 200px; 
 }
-.img2{
+.img2 {
     text-align: left;
     padding-left: 100px;
     margin-top: 14px;
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: auto; 
+    max-height: 200px; 
     margin-bottom: 82px;
 }
 .creativity{

@@ -1,7 +1,7 @@
-import img1 from '../../assets/caseStudy/case1.jpeg';
-import img2 from '../../assets/caseStudy/case2.jpeg';
-import img3 from '../../assets/caseStudy/case3.jpeg';
-import img4 from '../../assets/caseStudy/case4.jpeg';
+import img1 from '../../assets/caseStudy/k1.jpeg';
+import img2 from '../../assets/caseStudy/case4.jpeg';
+import img3 from '../../assets/caseStudy/k2.jpeg';
+import img4 from '../../assets/caseStudy/k3.jpeg';
 import img5 from '../../assets/caseStudy/case5.jpeg';
 import img6 from '../../assets/caseStudy/case6.jpeg';
 
@@ -20,27 +20,27 @@ const fakeData = [
     },
     {
         id: 3,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img3,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     {
         id: 4,
         title: 'Kenyan Taste',
         img: img4,
-        category: 'Kenyan Taste'
+        category: 'kenyan taste'
     },
     {
         id: 5,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img5,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     {
         id: 6,
-        title: 'Mayonnaise',
+        title: 'Kenyan Taste',
         img: img6,
-        category: 'mayonnaise'
+        category: 'kenyan taste'
     },
     
 ];

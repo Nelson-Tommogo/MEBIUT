@@ -20,10 +20,10 @@ const Middle = () => {
                     {/* First product/service block */}
                     <div data-aos='fade-right' data-aos-offset="170" className="col-md-4">
                         <div className={styles.box}>
-                            <img src={logo1} alt="Kenyan Taste Sauces"/>
+                            <img src={logo1} alt="Kenyan Taste Sauces" className={styles.img}/>
                             <p className={styles.head}>Kenyan Taste Sauces</p>
                             <p className={styles.content}>
-                                Our signature **Kenyan Taste Sauces** are made with authentic Kenyan spices and ingredients, giving your dishes a bold and flavorful kick.
+                                Our signature Kenyan Taste Sauces are made with authentic Kenyan spices and ingredients, giving your dishes a bold and flavorful kick.
                             </p>
                         </div>
                     </div>
@@ -31,10 +31,10 @@ const Middle = () => {
                     {/* Second product/service block */}
                     <div data-aos='fade-up' className="col-md-4">
                         <div className={styles.box}>
-                            <img src={logo2} alt="Kenyan Taste Mayonnaise"/>
+                            <img src={logo2} alt="Kenyan Taste Mayonnaise" className={styles.img}/>
                             <p className={styles.head}>Kenyan Taste Mayonnaise</p>
                             <p className={styles.content}>
-                                Smooth, creamy, and full of flavor, our **Kenyan Taste Mayonnaise** is perfect for sandwiches, salads, and as a dip for your favorite snacks.
+                                Smooth, creamy, and full of flavor, our Kenyan Taste Mayonnaise is perfect for sandwiches, salads, and as a dip for your favorite snacks.
                             </p>
                         </div>
                     </div>
@@ -42,10 +42,10 @@ const Middle = () => {
                     {/* Third product/service block */}
                     <div data-aos='fade-left' className="col-md-4">
                         <div className={styles.box}>
-                            <img src={logo3} alt="Order Our Products"/>
+                            <img src={logo3} alt="Order Our Products" className={styles.img}/>
                             <p className={styles.head}>Order Our Products</p>
                             <p className={styles.content}>
-                                Experience the taste of Kenya today. You can easily order our **Kenyan Taste Sauces** and **Mayonnaise** directly from us and have them delivered to your home.
+                                Experience the taste of Kenya today. You can easily order our Kenyan Taste Sauces and Mayonnaise directly from us and have them delivered to your home.
                             </p>
                         </div>
                     </div>

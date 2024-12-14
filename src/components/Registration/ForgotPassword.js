@@ -4,6 +4,8 @@ import styles from './ForgotPassword.module.css';
 import { sendPasswordResetEmail } from 'firebase/auth'; 
 import { auth } from '../../firebase'; 
 import Modal from 'react-modal';
+import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa'; // Import icons
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -64,9 +66,12 @@ const ForgotPassword = () => {
         className={styles.modal}
         overlayClassName={styles.overlay}
       >
-        <h2>Password Reset Email Sent</h2>
-        <p>An email has been sent to {email} with instructions to reset your password.</p>
-        <button onClick={closeModal} className={styles.modalButton}>Close</button>
+        <div className={styles.modalContent}>
+          <FaCheckCircle className={styles.successIcon} />
+          <h2>Password Reset Email Sent</h2>
+          <p>An email has been sent to {email} with instructions to reset your password.</p>
+          <button onClick={closeModal} className={styles.modalButton}>Close</button>
+        </div>
       </Modal>
 
       {/* Error Modal */}
@@ -77,9 +82,12 @@ const ForgotPassword = () => {
         className={styles.modal}
         overlayClassName={styles.overlay}
       >
-        <h2>Error Sending Email</h2>
-        <p>{errorMessage}</p>
-        <button onClick={closeModal} className={styles.modalButton}>Close</button>
+        <div className={styles.modalContent}>
+          <FaExclamationCircle className={styles.errorIcon} />
+          <h2>Error Sending Email</h2>
+          <p>{errorMessage}</p>
+          <button onClick={closeModal} className={styles.modalButton}>Close</button>
+        </div>
       </Modal>
     </div>
   );

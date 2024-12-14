@@ -75,6 +75,20 @@ const NavbarMain = () => {
                 About Us
               </NavLink>
 
+              
+              <NavLink
+                to="/blog"
+                className={`${styles.nav_text} nav-link ${activeNav[1] ? styles.active : ""}`}
+                style={{ marginTop: "8px" }}
+                onClick={() => {
+                  handleActiveNav(1);
+                  closeNav();
+                }}
+              >
+                Blog
+              </NavLink>
+
+
               <NavLink
                 to="/OurShop"
                 className={`${styles.nav_text} nav-link ${activeNav[2] ? styles.active : ""}`}

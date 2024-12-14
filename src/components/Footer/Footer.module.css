@@ -1,4 +1,4 @@
-.logo{
+.logo {
     font-size: 40px;
     font-family: 'Montserrat';
     font-weight: bold;
@@ -6,35 +6,39 @@
     text-align: left;
 }
 
-.text{
+.text {
     color: #fefefe;
     text-align: left;
     font-size: 16px;
     margin-bottom: 0px;
 }
-.social_logo{
+
+.social_logo {
     text-align: left;
     margin-top: 25px;
 }
-.img{
+
+.img {
     margin-right: 14px;
     margin-bottom: 40px;
     cursor: pointer;
     width: 40px;
 }
-.img:hover{
+
+.img:hover {
     transform: scale(1.1);
 }
-.head{
+
+.head {
     color: #fefefe;
     font-size: 22px;
     text-align: left;
     margin-top: 15px;
     margin-bottom: 28px;
     font-weight: 500;
-    
 }
-.bottom{
+
+.bottom {
     color: #fefefe;
     font-size: 16px;
     margin-bottom: 0px;
@@ -42,53 +46,65 @@
     padding-top: 12px;
 }
 
-@media screen and (max-width: 992px){
-    .text{
+/* New CSS for complaint link */
+.complaintLink {
+    color: #6C4D38; /* Link color */
+    font-weight: bold; /* Make it bold */
+    text-decoration: underline; /* Underline for visibility */
+    cursor: pointer; /* Pointer cursor */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.complaintLink:hover {
+    color: #fefefe; /* Change color on hover */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+    .text {
         width: 230px;
     }
-    .logo{
+    .logo {
         font-size: 35px;
     }
 }
-@media screen and (max-width: 600px){
-    .logo{
+@media screen and (max-width: 600px) {
+    .logo {
         font-size: 28px;
     }
-    .head{
+    .head {
         font-size: 17px;
     }
-    .text{
+    .text {
         font-size: 14px;
     }
-    .bottom{
+    .bottom {
         font-size: 14px;
         height: 45px;
     }
 }
-@media screen and (max-width: 575px){
-    .contain{
+@media screen and (max-width: 575px) {
+    .contain {
         padding-left: 30% !important;
         margin-bottom: 25px;
     }
-    .head{
+    .head {
         margin-bottom: 10px;
     }
-    .img{
+    .img {
         margin-bottom: 25px;
     }
 }
-@media screen and (max-width: 455px){
-    .contain{
+@media screen and (max-width: 455px) {
+    .contain {
         padding-left: 20% !important;
     }
 }
-
-@media screen and (max-width: 350px){
-    .contain{
+@media screen and (max-width: 350px) {
+    .contain {
         padding-left: 10% !important;
     }
-    .text{
+    .text {
         width: 100%;
     }
-
 }
