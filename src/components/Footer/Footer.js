@@ -1,82 +1,128 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import React, { useState } from "react";
 import styles from './Footer.module.css';
-import fb from '../../assets/home/facebook.png';
-import tiktok from '../../assets/home/tiktok.png';
-import insta from '../../assets/home/insta.png';
-import twitter from '../../assets/home/twitter.png';
+import { FiChevronDown } from 'react-icons/fi';
+import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from 'react-icons/fa';
+
+const servicesData = [
+    { 
+        name: 'Complaint Form', 
+        pdfUrl: '' 
+    },
+    { 
+        name: 'Terms and Conditions', 
+        pdfUrl: '' 
+    },
+];
 
 const Footer = () => {
+    const [openService, setOpenService] = useState(null);
+
+    const toggleService = (index) => {
+        setOpenService(openService === index ? null : index);
+    };
+
     return (
         <>
-            <div style={{ backgroundColor: '#2b2b2b', paddingTop: '89px', paddingBottom: '90px' }}>
+            {/* Newsletter Section */}
+            <div className={styles.newsletterContainer}>
+                <div className={styles.newsletterContent}>
+                    <p className={styles.newsletterText}>
+                        Subscribe to our newsletter to get <br />
+                        updates and recommendations.
+                    </p>
+                    <div className={styles.newsletterInputContainer}>
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            className={styles.newsletterInput}
+                        />
+                        <button
+                            className={styles.subscribeButton}
+                            onClick={() => (window.location.href = "mailto:info@mebiut.com")}
+                        >
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer Section */}
+            <div style={{ backgroundColor: '#000', paddingTop: '89px', paddingBottom: '90px' }}>
                 <div className="container">
                     <div className="row">
+                        {/* Column 1 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
-                            <p className={styles.logo}>Mebiut</p>
-                            <p className={styles.text}>
-                                Mebiut is passionate about crafting high-quality sauces that add rich flavor to every meal.
-                            </p>
-                            <p className={styles.text}>
-                                We create traditional recipes and unique blends that inspire a universal taste experience.
-                            </p>
-                            <p className={styles.text}>
-                                For any complaints, please let us know.
-                            </p>
-                            <p className={styles.text} style={{ marginTop: '10px' }}>
-                                <Link 
-                                    to="/Complainform" 
-                                    className={styles.complaintLink}
-                                >
-                                    Click here to fill out the form.
-                                </Link>
-                            </p>
-
-                            <div className={styles.social_logo}>
-                                <a href="https://www.facebook.com/profile.php?id=61565794663374" target="_blank" rel="noopener noreferrer">
-                                    <img src={fb} alt="Facebook" className={styles.img} />
-                                </a>
-                                <a href="https://vm.tiktok.com/ZMhFRrvwV/" target="_blank" rel="noopener noreferrer">
-                                    <img src={tiktok} alt="TikTok" className={styles.img} />
-                                </a>
-                                <a href="https://www.instagram.com/p/DAI9o-iCIxV/?igsh=MWtsYnU4cWZ3czY2bA==" target="_blank" rel="noopener noreferrer">
-                                    <img src={insta} alt="Instagram" className={styles.img} />
-                                </a>
-                                <a href="https://x.com/mebiutkenya?t=g49avdNlTqYEQTQQ809LAQ&s=09" target="_blank" rel="noopener noreferrer">
-                                    <img src={twitter} alt="Twitter" className={styles.img} />
-                                </a>
-                            </div>
+                            <p className={styles.logo}>Mebiut Limited</p>
+                            <p className={styles.text}>Mebiut specializes in sauces.</p>
+                            <p className={styles.text}>Make every bite unforgettable.</p>
                         </div>
 
+                        {/* Column 2 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
-                            <p className={styles.head}>Services</p>
-                            <p className={styles.text}>00618 Ruaraka Nairobi, Kenya</p>
-                            <p className={styles.text}>info@mebiut.com</p>
-                            <p className={styles.text}>(+254) 59735505</p>
+                            <p className={styles.head}>Useful Links</p>
+                            {servicesData.map((service, index) => (
+                                <div key={index}>
+                                    <div className={styles.text} onClick={() => toggleService(index)}>
+                                        {service.name}
+                                        <FiChevronDown style={{ marginLeft: '8px', cursor: 'pointer' }} />
+                                    </div>
+                                    {openService === index && (
+                                        <div className={styles.text} style={{ cursor: 'pointer' }}>
+                                            <a href={service.pdfUrl} target="_blank" rel="noopener noreferrer">
+                                                View {service.name}
+                                            </a>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
 
+                        {/* Column 3 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
-                            <p className={styles.head}>Head Office</p>
-                            <p className={styles.text}>00618 Ruaraka Nairobi, Kenya</p>
-                            <p className={styles.text}>info@mebiut.com</p>
-                            <p className={styles.text}>(+254) 113-792-645</p>
+                            <p className={styles.head}>Kenyan Taste</p>
+                            <p className={styles.text}>Mayonnaise</p>
+                            <p className={styles.text}>Sauce Development</p>
+                            <p className={styles.text}>Ketchup</p>
                         </div>
 
+                        {/* Column 4 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
-                            <p className={styles.head}>Opening Hours</p>
-                            <p className={styles.text}>Mon - Fri : 09:00 - 20:00</p>
-                            <p className={styles.text}>Sat - Sun : 10:30 - 22:00</p>
-                            <p className={styles.text}>Order/Purchase : 24 hours</p>
+                            <p className={styles.head}>Follow Our Socials</p>
+                            <p className={styles.text}>
+                                <a href="https://facebook.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                    <FaFacebook className={styles.icon} />
+                                </a>
+                                Facebook
+                            </p>
+                            <p className={styles.text}>
+                                <a href="https://tiktok.com/@mebiut" target="_blank" rel="noopener noreferrer">
+                                    <FaTiktok className={styles.icon} />
+                                </a>
+                                TikTok
+                            </p>
+                            <p className={styles.text}>
+                                <a href="https://instagram.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                    <FaInstagram className={styles.icon} />
+                                </a>
+                                Instagram
+                            </p>
+                            <p className={styles.text}>
+                                <a href="https://twitter.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                    <FaTwitter className={styles.icon} />
+                                </a>
+                                Twitter
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style={{ backgroundColor: '#2b2b2b', borderTop: 'solid 1px #707070' }}>
-                <p className={styles.bottom}>Copyright © 2024 Mebiut. All rights reserved</p>
+            {/* Copyright Section */}
+            <div style={{ backgroundColor: '#6c4d38', borderTop: 'solid 1px #707070' }}>
+                <p className={styles.bottom}>Copyright © 2024 Mebiut. All rights reserved.</p>
             </div>
         </>
     );
-}
+};
 
 export default Footer;
