@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import styles from "./NavbarMain.module.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import logo from './logo.png'; // Assuming logo.png is in the same folder
 
 const NavbarMain = () => {
-  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showRegistrationDropdown, setShowRegistrationDropdown] = useState(false);
   const [activeNav, setActiveNav] = useState([true, false, false, false, false, false, false]);
   const [expand, setExpand] = useState(false);
@@ -75,41 +74,18 @@ const NavbarMain = () => {
                 Shop Now
               </NavLink>
 
-              <NavDropdown
-                show={showServicesDropdown}
-                onMouseEnter={() => setShowServicesDropdown(true)}
-                onMouseLeave={() => setShowServicesDropdown(false)}
-                className={`nav-link ${styles.drop}`}
-                title={
-                  <Link
-                    to="/services"
-                    style={{ textDecoration: "none" }}
-                    className={styles.dropicon}
-                    onClick={() => {
-                      handleActiveNav(4);
-                      closeNav();
-                    }}
-                  >
-                    <span className={`${styles.nav_text} my-auto ${activeNav[4] ? styles.active : ""}`}>
-                      Services
-                    </span>
-                  </Link>
-                }
-                id="basic-nav-dropdown"
+              {/* Change made here: Services is now a NavLink instead of a NavDropdown */}
+              <NavLink
+                to="/services"
+                className={`${styles.nav_text} nav-link ${activeNav[4] ? styles.active : ""}`}
+                style={{ marginTop: "8px" }}
+                onClick={() => {
+                  handleActiveNav(4);
+                  closeNav();
+                }}
               >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <NavLink
-                    to="/sMediaService"
-                    onClick={() => {
-                      handleActiveNav(4);
-                      closeNav();
-                    }}
-                    className={styles.dropdownText}
-                  >
-                    Custom Sauce Development
-                  </NavLink>
-                </NavDropdown.Item>
-              </NavDropdown>
+                Services
+              </NavLink>
 
               {/* More Insights Dropdown */}
               <NavDropdown
@@ -158,8 +134,6 @@ const NavbarMain = () => {
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
-
-
 
               {/* Registration Dropdown */}
               <NavDropdown

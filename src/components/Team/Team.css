@@ -21,8 +21,8 @@
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex; /* Changed from grid to flex for centering */
+    justify-content: center; /* Center the team cards */
     gap: 20px;
     margin-top: 20px;
 }
@@ -37,6 +37,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 350px; /* Fixed width for consistent card size */
 }
 
 .team-card:hover {
@@ -103,7 +104,8 @@ h3 {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        flex-direction: column; /* Stack members vertically on smaller screens */
+        align-items: center; /* Center cards */
     }
 
     .team-header h1 {

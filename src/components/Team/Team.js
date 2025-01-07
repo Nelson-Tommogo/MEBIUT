@@ -2,8 +2,6 @@ import './Team.css';
 import Footer from "../Footer";
 import teamMember1 from '../../assets/home/charles.jpg'; 
 import teamMember2 from '../../assets/home/profile.jpeg'; 
-import teamMember3 from '../../assets/home/aloice.jpg'; 
-import teamMember4 from '../../assets/home/obeast.jpeg'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -26,38 +24,12 @@ const teamMembers = [
     name: 'Nelson Tommogo',
     role: 'Chief Technology Officer (CTO)',
     image: teamMember2,
-    expertise: 'Software Development and Agile Methodologies, Systems Architecture and Cloud Computing, Cybersecurity and Data Privacy.',
+    expertise: 'Software Engineering, Mobile and Web Engineering',
     bio: 'As the CTO of MEBIUT, I drive technological innovation and process optimization to enhance product quality and efficiency while leading a multidisciplinary team to develop and implement strategies that align with the company’s goals.',
     socialLinks: {
       twitter: 'https://x.com/nelson_tommogo',
       linkedIn: 'https://www.linkedin.com/in/nelson-tommogo/',
       github: 'https://github.com/Nelson-Tommogo',
-    },
-  },
-  {
-    id: 3,
-    name: 'Aloyce Otieno',
-    role: 'Software Engineer',
-    image: teamMember3,
-    expertise: 'Web Development and Frontend Technologies, Backend Development and API Integration, Database Management and Data Analytics.',
-    bio: 'As a software engineer at MEBIUT, I focus on developing innovative software solutions that streamline production processes and enhance product quality, collaborating with cross-functional teams to implement technology-driven strategies that align with our business objectives.',
-    socialLinks: {
-      twitter: 'https://x.com/_allois?t=dVdJ9hZbn8odB9coUd9kgQ&s=08',
-      linkedIn: 'http://linkedin.com/in/aloyce-otieno',
-      github: 'http://github.com/Allous-pun',
-    },
-  },
-  {
-    id: 4,
-    name: 'Joshua Obondo',
-    role: 'Chief Marketing Officer (CMO)',
-    image: teamMember4,
-    expertise: 'Marketing Strategy, Brand Management, and Communications.',
-    bio: 'As the Chief Marketing Officer (CMO) at MEBIUT, I lead the development and execution of marketing strategies to promote our signature sauces, driving brand awareness and customer engagement while leveraging market insights to align our products with consumer preferences.',
-    socialLinks: {
-      twitter: 'https://x.com/Obondojoshua2?t=0QKzOM1VAT-sDAeuEjlh6A&s=09',
-      linkedIn: 'https://www.linkedin.com/in/joshua-obondo-a27876241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-      instagram: 'https://www.instagram.com/obondojoshuah/profilecard/?igsh=dm5zcHJqcWJubXFo',
     },
   },
 ];
