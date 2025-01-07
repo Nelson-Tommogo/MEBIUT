@@ -71,9 +71,11 @@ const OurShop = () => {
   };
 
   const validatePhoneNumber = (number) => {
-    const phoneRegex = /^07\d{8}$/; 
-    return phoneRegex.test(number);
+    const cleanedNumber = number.replace(/\s+/g, ''); // Remove spaces
+    const phoneRegex = /^(07\d{8}|01\d{8}|254\d{9})$/; 
+    return phoneRegex.test(cleanedNumber);
   };
+  
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
     const valid = validatePhoneNumber(phoneNumber);
