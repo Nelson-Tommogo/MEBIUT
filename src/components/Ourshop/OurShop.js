@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './OurShop.css';
 import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer";
 import product1 from '../../assets/home/product1.jpeg'; 
 import product2 from '../../assets/home/product2.jpeg'; 
@@ -22,6 +21,13 @@ const OurShop = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [locationInput, setLocation] = useState('');
+  const [useLiveLocation, setUseLiveLocation] = useState(false);
+  const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+  const [isValidPhone, setIsValidPhone] = useState(true);
+  const [isLoadingPayment, setIsLoadingPayment] = useState(false);
+  const [message, setMessage] = useState('');
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(item => item.id === product.id);
@@ -65,6 +71,72 @@ const OurShop = () => {
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
+  };
+
+  const validatePhoneNumber = (number) => {
+    const phoneRegex = /^07\d{8}$/; 
+    return phoneRegex.test(number);
+  };
+
+  const handlePaymentSubmit = async (e) => {
+    e.preventDefault();
+    const valid = validatePhoneNumber(phoneNumber);
+    setIsValidPhone(valid);
+
+    if (valid) {
+      const confirmation = window.confirm(`Confirm purchase of ${totalQuantity} items worth Ksh ${totalAmount}?`);
+      if (!confirmation) return;
+
+      setIsLoadingPayment(true);
+      setMessage('');
+
+      try {
+        const response = await fetch('https://mbackend-lg66.onrender.com/api/stk', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount: totalAmount, phoneNumber }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          setMessage('Payment request sent successfully. Please check your phone.');
+        } else {
+          setMessage('Failed to send payment request. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        setMessage('An error occurred. Please try again.');
+      } finally {
+        setIsLoadingPayment(false);
+      }
+    } else {
+      console.log('Invalid phone number');
+    }
+  };
+
+  const handleUseLiveLocation = () => {
+    if (!useLiveLocation) {
+      setIsLoadingLocation(true);
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            setLocation(`Lat: ${latitude}, Long: ${longitude}`);
+            setUseLiveLocation(true);
+            setIsLoadingLocation(false);
+          },
+          (error) => {
+            console.error('Error getting location:', error);
+            setIsLoadingLocation(false);
+          }
+        );
+      } else {
+        alert('Geolocation is not supported by this browser.');
+        setIsLoadingLocation(false);
+      }
+    }
   };
 
   return (
@@ -140,9 +212,51 @@ const OurShop = () => {
               <div className="cart-summary">
                 <p>Total Quantity: {totalQuantity}</p>
                 <p>Total Amount: Ksh {totalAmount}</p>
-                <Link to={{ pathname: '/Payment', state: { amount: totalAmount } }}>
-                  <button className="checkout-btn">Checkout</button>
-                </Link>
+                <form onSubmit={handlePaymentSubmit} className="payment-form">
+                  <div className="form-group">
+                    <label htmlFor="phoneNumber">M-Pesa Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phoneNumber"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      placeholder="Enter your phone number"
+                      required
+                      className={!isValidPhone ? 'error' : ''}
+                    />
+                    {!isValidPhone && <p className="error-message">Please enter a valid M-Pesa number (e.g., 07XXXXXXXX).</p>}
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="location">Delivery Location</label>
+                    <input
+                      type="text"
+                      id="location"
+                      value={locationInput}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Enter your location or use live location"
+                      disabled={useLiveLocation}
+                      required={!useLiveLocation}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <button
+                      type="button"
+                      className={`live-location-btn ${useLiveLocation ? 'active' : ''}`}
+                      onClick={handleUseLiveLocation}
+                      disabled={isLoadingLocation}
+                    >
+                      {isLoadingLocation ? 'Getting Location...' : (useLiveLocation ? 'Using Live Location' : 'Use Live Location')}
+                    </button>
+                  </div>
+
+                  <button type="submit" className="submit-payment-btn" disabled={isLoadingPayment}>
+                    {isLoadingPayment ? 'Processing...' : 'Submit Payment'}
+                  </button>
+                </form>
+
+                {message && <p className="payment-message">{message}</p>}
               </div>
             )}
           </div>

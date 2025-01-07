@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const Payment = () => {
   const location = useLocation();
-  const { amount } = location.state || { amount: 0 };
+  const { amount, quantity } = location.state || { amount: 0, quantity: 0 };
   const [phoneNumber, setPhoneNumber] = useState('');
   const [locationInput, setLocation] = useState('');
   const [useLiveLocation, setUseLiveLocation] = useState(false);
@@ -25,7 +25,7 @@ const Payment = () => {
     setIsValidPhone(valid);
 
     if (valid) {
-      const confirmation = window.confirm(`Confirm purchase of Mebiut Products worth Ksh ${amount}?`);
+      const confirmation = window.confirm(`Confirm purchase of ${quantity} items worth Ksh ${amount}?`);
       if (!confirmation) return;
 
       setIsLoadingPayment(true);
