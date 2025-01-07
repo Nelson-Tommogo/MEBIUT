@@ -2,19 +2,16 @@ import React, { useState } from 'react';
 import './OurShop.css';
 import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
 import Footer from "../../components/Footer";
-import product1 from '../../assets/home/product1.jpeg'; 
-import product2 from '../../assets/home/product2.jpeg'; 
+import product1 from '../../assets/home/3.jpg'; 
+import product2 from '../../assets/home/2.jpg'; 
 import product3 from '../../assets/home/product3.jpeg'; 
-import product4 from '../../assets/home/product4.jpeg'; 
-import product5 from '../../assets/home/product5.jpeg'; 
+import product4 from '../../assets/home/9.jpg'; 
 
 const products = [
   { id: 1, name: 'Kenyan Taste', description: '340g', image: product1, price: 390 },
-  { id: 2, name: 'Kenyan Taste', description: '128g', image: product2, price: 200 },
-  { id: 3, name: 'Mayonnaise', description: '340g', image: product3, price: 420 },
-  { id: 4, name: 'Mayonnaise', description: '250g', image: product4, price: 350 },
-  { id: 5, name: 'Mayonnaise', description: '900g', image: product5, price: 700 },
-  { id: 6, name: 'Mayonnaise', description: '250g', image: product5, price: 390 },
+  { id: 2, name: 'Kenyan Taste', description: '240g', image: product2, price: 260 },
+  { id: 3, name: 'Mayonnaise', description: '340g', image: product3, price: 350 },
+  { id: 4, name: 'Kenyan Taste', description: '140g', image: product4, price: 160 },
 ];
 
 const OurShop = () => {
