@@ -7,7 +7,7 @@ import logo from './logo.png'; // Assuming logo.png is in the same folder
 const NavbarMain = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showRegistrationDropdown, setShowRegistrationDropdown] = useState(false);
-  const [activeNav, setActiveNav] = useState([true, false, false, false, false]);
+  const [activeNav, setActiveNav] = useState([true, false, false, false, false, false, false]);
   const [expand, setExpand] = useState(false);
 
   const closeNav = () => {
@@ -64,37 +64,11 @@ const NavbarMain = () => {
               </NavLink>
 
               <NavLink
-                to="/aboutUs"
-                className={`${styles.nav_text} nav-link ${activeNav[1] ? styles.active : ""}`}
-                style={{ marginTop: "8px" }}
-                onClick={() => {
-                  handleActiveNav(1);
-                  closeNav();
-                }}
-              >
-                About Us
-              </NavLink>
-
-              
-              <NavLink
-                to="/blog"
-                className={`${styles.nav_text} nav-link ${activeNav[1] ? styles.active : ""}`}
-                style={{ marginTop: "8px" }}
-                onClick={() => {
-                  handleActiveNav(1);
-                  closeNav();
-                }}
-              >
-                Blog
-              </NavLink>
-
-
-              <NavLink
                 to="/OurShop"
-                className={`${styles.nav_text} nav-link ${activeNav[2] ? styles.active : ""}`}
+                className={`${styles.nav_text} nav-link ${activeNav[3] ? styles.active : ""}`}
                 style={{ marginTop: "8px" }}
                 onClick={() => {
-                  handleActiveNav(2);
+                  handleActiveNav(3);
                   closeNav();
                 }}
               >
@@ -112,11 +86,11 @@ const NavbarMain = () => {
                     style={{ textDecoration: "none" }}
                     className={styles.dropicon}
                     onClick={() => {
-                      handleActiveNav(3);
+                      handleActiveNav(4);
                       closeNav();
                     }}
                   >
-                    <span className={`${styles.nav_text} my-auto ${activeNav[3] ? styles.active : ""}`}>
+                    <span className={`${styles.nav_text} my-auto ${activeNav[4] ? styles.active : ""}`}>
                       Services
                     </span>
                   </Link>
@@ -127,7 +101,7 @@ const NavbarMain = () => {
                   <NavLink
                     to="/sMediaService"
                     onClick={() => {
-                      handleActiveNav(3);
+                      handleActiveNav(4);
                       closeNav();
                     }}
                     className={styles.dropdownText}
@@ -137,17 +111,55 @@ const NavbarMain = () => {
                 </NavDropdown.Item>
               </NavDropdown>
 
-              <NavLink
-                to="/contactUs"
-                className={`${styles.nav_text} nav-link ${activeNav[4] ? styles.active : ""}`}
-                style={{ marginTop: "8px" }}
-                onClick={() => {
-                  handleActiveNav(4);
-                  closeNav();
-                }}
+              {/* More Insights Dropdown */}
+              <NavDropdown
+                className={`nav-link ${styles.drop}`}
+                title={
+                  <span className={`${styles.nav_text} my-auto`}>
+                    More Insights
+                  </span>
+                }
+                id="more-insights-dropdown"
               >
-                Contact Us
-              </NavLink>
+                <NavDropdown.Item>
+                  <NavLink
+                    to="/aboutUs"
+                    className={styles.dropdownText}
+                    onClick={() => {
+                      handleActiveNav(5);
+                      closeNav();
+                    }}
+                  >
+                    About Us
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink
+                    to="/blog"
+                    className={styles.dropdownText}
+                    onClick={() => {
+                      handleActiveNav(5);
+                      closeNav();
+                    }}
+                  >
+                    Blog
+                  </NavLink>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <NavLink
+                    to="/contactUs"
+                    className={styles.dropdownText}
+                    onClick={() => {
+                      handleActiveNav(5);
+                      closeNav();
+                    }}
+                  >
+                    Contact Us
+                  </NavLink>
+                </NavDropdown.Item>
+              </NavDropdown>
+
+
 
               {/* Registration Dropdown */}
               <NavDropdown
@@ -163,7 +175,7 @@ const NavbarMain = () => {
                     to="/signup"
                     className={styles.dropdownText}
                     onClick={() => {
-                      handleActiveNav(5);
+                      handleActiveNav(7);
                       closeNav();
                     }}
                   >
@@ -175,7 +187,7 @@ const NavbarMain = () => {
                     to="/login"
                     className={styles.dropdownText}
                     onClick={() => {
-                      handleActiveNav(5);
+                      handleActiveNav(7);
                       closeNav();
                     }}
                   >

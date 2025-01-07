@@ -6,11 +6,15 @@ import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from 'react-icons/fa';
 const servicesData = [
     { 
         name: 'Complaint Form', 
-        pdfUrl: '' 
+        pdfUrl: 'https://docs.google.com/forms/d/1YX5Hb75nYQ-gR69LI0IYUr296ofgJdq2G4rlSxRPreg/edit?ts=675e7504' 
     },
     { 
-        name: 'Terms and Conditions', 
-        pdfUrl: '' 
+        name: 'Kenyan Taste Website', 
+        pdfUrl: 'kenyantaste.mebiut.com ' 
+    },
+    { 
+        name: 'Mebiuts Mayonnaise Website', 
+        pdfUrl: 'mayonnaise.mebiut.com' 
     },
 ];
 
@@ -79,35 +83,35 @@ const Footer = () => {
 
                         {/* Column 3 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
-                            <p className={styles.head}>Kenyan Taste</p>
-                            <p className={styles.text}>Mayonnaise</p>
-                            <p className={styles.text}>Sauce Development</p>
-                            <p className={styles.text}>Ketchup</p>
+                            <p className={styles.head}>Our Top Services</p>
+                            <p className={styles.text}>Kenyan Taste Development and Supply</p>
+                            <p className={styles.text}>Mabiut Mayonnaise</p>
+                            <p className={styles.text}>Custom Recipe Development</p>
                         </div>
 
                         {/* Column 4 */}
                         <div className={`col-lg-3 col-sm-6 ${styles.contain}`}>
                             <p className={styles.head}>Follow Our Socials</p>
                             <p className={styles.text}>
-                                <a href="https://facebook.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                <a href="https://web.facebook.com/profile.php?id=61565794663374" target="_blank" rel="noopener noreferrer">
                                     <FaFacebook className={styles.icon} />
                                 </a>
                                 Facebook
                             </p>
                             <p className={styles.text}>
-                                <a href="https://tiktok.com/@mebiut" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.tiktok.com/@mebiut2024" target="_blank" rel="noopener noreferrer">
                                     <FaTiktok className={styles.icon} />
                                 </a>
                                 TikTok
                             </p>
                             <p className={styles.text}>
-                                <a href="https://instagram.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.instagram.com/mebiutkenya/" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className={styles.icon} />
                                 </a>
                                 Instagram
                             </p>
                             <p className={styles.text}>
-                                <a href="https://twitter.com/mebiut" target="_blank" rel="noopener noreferrer">
+                                <a href="https://x.com/mebiutkenya" target="_blank" rel="noopener noreferrer">
                                     <FaTwitter className={styles.icon} />
                                 </a>
                                 Twitter

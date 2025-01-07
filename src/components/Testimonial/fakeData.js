@@ -1,17 +1,17 @@
-import image1 from '../../assets/home/beryl.jpg';
+import image1 from '../../assets/home/smartmavuno.png';
 import image2 from '../../assets/home/esther.jpg';
-import image3 from '../../assets/home/osala.jpg';
+import image3 from '../../assets/home/cmetrust.png';
 import image4 from '../../assets/home/lynn.jpg';
-import image5 from '../../assets/home/Tony.jpg';
+import image5 from '../../assets/home/kebs.jpeg';
 import image6 from '../../assets/home/manu.jpg';
 
 export const fakeData = [
     {
         id: 1,
         img: image1,
-        name: 'Beryl Odewo',
-        profession: 'Software Engineer',
-        message: "Mebiut’s mayonnaise is simply great! It has the perfect creaminess and flavor that elevates my sandwiches and salads. I never knew mayonnaise could taste this good. It has become a staple in my kitchen!"
+        name: 'SmartMavuno',
+        profession: 'AgriTech',
+        message: "We've partnered with mebiut in many Occassions at professional Level, all we can say is that, Mebiut Sauces are Awesome, please check them out"
     },
     {
         id: 2,
@@ -23,9 +23,9 @@ export const fakeData = [
     {
         id: 3,
         img: image3,
-        name: 'Osallah',
-        profession: 'Health Champion',
-        message: "I’m really enjoying Mebiut’s sauces. They have transformed the way I cook and eat. Each sauce adds a distinct flavor to my meals, making them taste so much better. I can’t imagine cooking without them!"
+        name: 'CMETrust',
+        profession: 'Canada Mathare Education Trust',
+        message: "Mebiut Participated in CMETrust 2024 Anual Walkathon event, and the Audience Really liked their Sauces, some even ordered right away."
     },
     {
         id: 4,
@@ -37,9 +37,9 @@ export const fakeData = [
     {
         id: 5,
         img: image5,
-        name: 'Tony',
-        profession: 'Economist',
-        message: "The flavors in Mebiut’s sauces are incredible! They bring out the best in every dish I prepare. From marinades to dips, I can't get enough of them. They truly enhance my cooking experience!"
+        name: 'KEBS',
+        profession: 'KEBS KENYA',
+        message: "We Certified Mebiut to Operate in Kenyan Sauce Industry, Safe and Healthy to Consume"
     },
     {
         id: 6,

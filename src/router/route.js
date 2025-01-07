@@ -76,7 +76,7 @@ const routes = [
 
     {
       component: ComplaintForm,
-      to: '/Complain-form'
+      to: '/complaintform'
     },
   
   ];

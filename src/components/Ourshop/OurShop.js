@@ -10,54 +10,13 @@ import product4 from '../../assets/home/product4.jpeg';
 import product5 from '../../assets/home/product5.jpeg'; 
 
 const products = [
-  {
-    id: 1,
-    name: 'Kenyan Taste',
-    description: '340g',
-    image: product1,
-    price: 390,
-  },
-  {
-    id: 2,
-    name: 'Kenyan Taste',
-    description: '128g',
-    image: product2,
-    price: 200,
-  },
-  {
-    id: 3,
-    name: 'Mayonnaise',
-    description: '340g',
-    image: product3,
-    price: 420,
-  },
-  {
-    id: 4,
-    name: 'Mayonnaise',
-    description: '250g',
-    image: product4,
-    price: 350,
-  },
-
-  {
-    id: 5,
-    name: 'Mayonnaise',
-    description: '900g',
-    image: product5,
-    price: 700,
-  },
-
-  {
-    id: 6,
-    name: 'Mayonnaise',
-    description: '250g',
-    image: product5,
-    price: 390,
-  },
-
+  { id: 1, name: 'Kenyan Taste', description: '340g', image: product1, price: 390 },
+  { id: 2, name: 'Kenyan Taste', description: '128g', image: product2, price: 200 },
+  { id: 3, name: 'Mayonnaise', description: '340g', image: product3, price: 420 },
+  { id: 4, name: 'Mayonnaise', description: '250g', image: product4, price: 350 },
+  { id: 5, name: 'Mayonnaise', description: '900g', image: product5, price: 700 },
+  { id: 6, name: 'Mayonnaise', description: '250g', image: product5, price: 390 },
 ];
-
-
 
 const OurShop = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -98,7 +57,7 @@ const OurShop = () => {
   };
 
   const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().trim().includes(searchQuery.toLowerCase().trim())
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -108,15 +67,11 @@ const OurShop = () => {
     setIsCartOpen(!isCartOpen);
   };
 
-  console.log('Filtered Products:', filteredProducts);
-
   return (
     <>
       <div className="our-shop-container">
         <header className="shop-header">
           <h1>Our Shop</h1>
-          
-          {/* Search Bar */}
           <div className="search-bar">
             <input
               type="text"
@@ -126,14 +81,12 @@ const OurShop = () => {
             />
             <FaSearch className="search-icon" size={20} />
           </div>
-
           <div className="cart-icon" onClick={toggleCart}>
             <FaShoppingCart size={30} />
-            <span className="cart-count">{cartItems.length}</span>
+            <span className="cart-count">{totalQuantity}</span>
           </div>
         </header>
 
-        {/* Product Grid (show filtered products) */}
         <div className="product-grid">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
@@ -142,20 +95,16 @@ const OurShop = () => {
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
                 <p>Ksh {product.price}</p>
-                <button
-                  className="add-to-cart-btn"
-                  onClick={() => addToCart(product)}
-                >
+                <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
                   Add to Basket
                 </button>
               </div>
             ))
           ) : (
-            <p>No products found</p> // Fallback for no products found
+            <p>No products found</p>
           )}
         </div>
 
-        {/* Cart Dropdown */}
         {isCartOpen && (
           <div className="cart-dropdown">
             <div className="cart-header">
@@ -167,27 +116,14 @@ const OurShop = () => {
                 {cartItems.map((item) => (
                   <li key={item.id}>
                     <div className="cart-item">
-                      <img src={item.image} alt={item.name} className="cart-item-img"/>
+                      <img src={item.image} alt={item.name} className="cart-item-img" />
                       <div className="cart-item-details">
                         <h4>{item.name}</h4>
                         <div className="cart-item-controls">
-                          <button
-                            className="quantity-btn"
-                            onClick={() => updateQuantity(item, item.quantity - 1)}
-                          >
-                            -
-                          </button>
+                          <button className="quantity-btn" onClick={() => updateQuantity(item, item.quantity - 1)}>-</button>
                           <span>{item.quantity}</span>
-                          <button
-                            className="quantity-btn"
-                            onClick={() => updateQuantity(item, item.quantity + 1)}
-                          >
-                            +
-                          </button>
-                          <button
-                            className="remove-item-btn"
-                            onClick={() => removeFromCart(item)}
-                          >
+                          <button className="quantity-btn" onClick={() => updateQuantity(item, item.quantity + 1)}>+</button>
+                          <button className="remove-item-btn" onClick={() => removeFromCart(item)}>
                             <FaTrashAlt /> Remove
                           </button>
                         </div>
@@ -204,7 +140,7 @@ const OurShop = () => {
               <div className="cart-summary">
                 <p>Total Quantity: {totalQuantity}</p>
                 <p>Total Amount: Ksh {totalAmount}</p>
-                <Link to="/Payment">
+                <Link to={{ pathname: '/Payment', state: { amount: totalAmount } }}>
                   <button className="checkout-btn">Checkout</button>
                 </Link>
               </div>
@@ -217,6 +153,5 @@ const OurShop = () => {
     </>
   );
 };
-
 
 export default OurShop;
