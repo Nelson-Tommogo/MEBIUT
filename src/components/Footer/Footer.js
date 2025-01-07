@@ -120,6 +120,20 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            
+{/* Embedded Map Section */}
+<div style={{ marginTop: '20px', textAlign: 'center' }}>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9126110649536!2d36.88994177490444!3d-1.220853898767499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f157248b209f7%3A0xe84ad13d462cc81b!2sMebiut!5e0!3m2!1sen!2ske!4v1736264721534!5m2!1sen!2ske" 
+        width="100%" 
+        height="300" 
+        style={{ border: 0 }} 
+        title="Location Map of Mebiut"
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+</div>
 
             {/* Copyright Section */}
             <div style={{ backgroundColor: '#6c4d38', borderTop: 'solid 1px #707070' }}>

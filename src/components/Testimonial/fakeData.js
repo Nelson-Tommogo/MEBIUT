@@ -1,9 +1,7 @@
 import image1 from '../../assets/home/smartmavuno.png';
 import image2 from '../../assets/home/esther.jpg';
 import image3 from '../../assets/home/cmetrust.png';
-import image4 from '../../assets/home/lynn.jpg';
 import image5 from '../../assets/home/kebs.jpeg';
-import image6 from '../../assets/home/manu.jpg';
 
 export const fakeData = [
     {
@@ -28,24 +26,10 @@ export const fakeData = [
         message: "Mebiut Participated in CMETrust 2024 Anual Walkathon event, and the Audience Really liked their Sauces, some even ordered right away."
     },
     {
-        id: 4,
-        img: image4,
-        name: 'Lynn Akinyi',
-        profession: 'Senior UI/UX Engineer',
-        message: "Mebiut’s sauces are a game changer for me! They’re packed with flavor and have become a must-have in my kitchen. Whether I’m grilling or making a quick meal, I always reach for Mebiut. Absolutely love them!"
-    },
-    {
         id: 5,
         img: image5,
         name: 'KEBS',
         profession: 'KEBS KENYA',
         message: "We Certified Mebiut to Operate in Kenyan Sauce Industry, Safe and Healthy to Consume"
-    },
-    {
-        id: 6,
-        img: image6,
-        name: 'Emmanuel Agwenyi',
-        profession: 'Health Diets Champion',
-        message: "I recently tried MEBIUT’s locally made mayonnaise and Kenyan Taste sauce, and it’s a game-changer! The creamy mayo pairs perfectly with the tangy Kenyan Taste sauce, enhancing any meal. True to their slogan, Make Every Bite Unforgettable, MEBIUT delivers an exceptional taste experience. Proudly Kenyan, this combo is a must-try!"
     },
 ]

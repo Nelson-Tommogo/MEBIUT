@@ -74,44 +74,47 @@ const OurShop = () => {
     const phoneRegex = /^07\d{8}$/; 
     return phoneRegex.test(number);
   };
-
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
     const valid = validatePhoneNumber(phoneNumber);
     setIsValidPhone(valid);
 
     if (valid) {
-      const confirmation = window.confirm(`Confirm purchase of ${totalQuantity} items worth Ksh ${totalAmount}?`);
-      if (!confirmation) return;
+        const confirmation = window.confirm(`Confirm purchase of ${totalQuantity} Mebiut Sauces worth Ksh ${totalAmount}?`);
+        if (!confirmation) return;
 
-      setIsLoadingPayment(true);
-      setMessage('');
+        setIsLoadingPayment(true);
+        setMessage('');
 
-      try {
-        const response = await fetch('https://mbackend-lg66.onrender.com/api/stk', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ amount: totalAmount, phoneNumber }),
-        });
+        try {
+            const response = await fetch('https://mbackend-lg66.onrender.com/api/stk', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ amount: totalAmount, phoneNumber }),
+            });
 
-        const data = await response.json();
-        if (data.success) {
-          setMessage('Payment request sent successfully. Please check your phone.');
-        } else {
-          setMessage('Failed to send payment request. Please try again.');
+            const data = await response.json();
+
+            // Check if the response was successful
+            if (response.ok) { // Adjusted check for successful response
+                setMessage(data.message); // Show the message from the backend
+            } else {
+                setMessage(data.error || 'Failed to send payment request. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setMessage('An error occurred. Please try again.');
+        } finally {
+            setIsLoadingPayment(false);
         }
-      } catch (error) {
-        console.error('Error:', error);
-        setMessage('An error occurred. Please try again.');
-      } finally {
-        setIsLoadingPayment(false);
-      }
     } else {
-      console.log('Invalid phone number');
+        console.log('Invalid phone number');
     }
-  };
+};
+
+
 
   const handleUseLiveLocation = () => {
     if (!useLiveLocation) {

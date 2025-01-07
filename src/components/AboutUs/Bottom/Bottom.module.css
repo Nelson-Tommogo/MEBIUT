@@ -6,32 +6,44 @@
     margin-top: 130px !important;
 }
 
+.card {
+    background-color: #f8f8f8; /* Light background color for the card */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slightly scale the card on hover */
+}
+
 .head {
     font-family: 'Poppins';
     font-size: 30px;
     font-weight: bold;
     color: rgb(108, 77, 56);
-    text-align: left;
-    margin-top: 135px;
-    margin-left: 150px;
+    margin: 0 0 10px; /* Adjust margins */
 }
 
 .content {
     font-family: 'Poppins';
     font-size: 14px;
     color: rgb(108, 77, 56);
-    opacity: .5;
-    text-align: left;
-    margin-left: 150px;
+    opacity: 0.7; /* Slightly less opacity for better readability */
 }
 
-/* Reduce image sizes */
+.imgContainer {
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Padding around the image */
+}
+
 .img, .img1 {
-    width: 70%;  /* Reduced the width to 70% for better size */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: auto; /* Center the images */
-    margin-right: auto; /* Center the images */
-    display: block; /* Ensure images are treated as block elements for centering */
+    width: 70%;
+    height: auto;
+    display: block; /* Block element for centering */
 }
 
 .head1 {
@@ -39,48 +51,28 @@
     font-size: 30px;
     font-weight: bold;
     color: rgb(108, 77, 56);
-    text-align: left;
-    margin-top: 135px;
+    margin: 0 0 10px;
 }
 
 .content1 {
     font-family: 'Poppins';
     font-size: 14px;
     color: rgb(108, 77, 56);
-    opacity: .5;
-    text-align: left;
-    margin-right: 100px;
-}
-
-.img1 {
-    width: 70%;  /* Apply the same width reduction for .img1 */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: auto; /* Center the images */
-    margin-right: auto; /* Center the images */
-    display: block; /* Ensure images are treated as block elements for centering */
+    opacity: 0.7;
 }
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 992px) {
-    .head {
-        margin-left: 0px;
-        margin-top: 90px;
+    .head, .head1 {
+        margin-top: 20px; /* Reduced margin for smaller screens */
     }
 
-    .content {
-        margin-left: 0px;
+    .content, .content1 {
+        margin: 0; /* Remove margins */
     }
 
     .img, .img1 {
-        width: 60%; /* Further reduce the image width for medium screens */
-    }
-
-    .head1 {
-        margin-top: 90px;
-    }
-
-    .content1 {
-        margin-right: 0px;
+        width: 60%; /* Adjust image width */
     }
 
     .row {
@@ -99,7 +91,6 @@
 
     .head, .head1 {
         font-size: 22px;
-        margin-top: 30px;
     }
 
     .row {
