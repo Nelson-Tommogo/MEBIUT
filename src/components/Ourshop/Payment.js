@@ -1,37 +1,62 @@
 import React, { useState } from 'react';
 import './Payment.css';
-import { FaMapMarkerAlt, FaTruck } from 'react-icons/fa'; // Location and truck icons
+import { FaMapMarkerAlt, FaTruck } from 'react-icons/fa'; 
+import { useLocation } from 'react-router-dom';
 
 const Payment = () => {
+  const location = useLocation();
+  const { amount } = location.state || { amount: 0 };
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [location, setLocation] = useState('');
+  const [locationInput, setLocation] = useState('');
   const [useLiveLocation, setUseLiveLocation] = useState(false);
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
   const [isValidPhone, setIsValidPhone] = useState(true);
+  const [isLoadingPayment, setIsLoadingPayment] = useState(false);
+  const [message, setMessage] = useState('');
 
-  // Validate phone number (should start with '07' and have 10 digits)
   const validatePhoneNumber = (number) => {
-    const phoneRegex = /^07\d{8}$/; // Kenyan M-Pesa phone number format
+    const phoneRegex = /^07\d{8}$/; 
     return phoneRegex.test(number);
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const valid = validatePhoneNumber(phoneNumber);
     setIsValidPhone(valid);
 
     if (valid) {
-      // Submit payment logic if phone number is valid
-      console.log('Phone Number:', phoneNumber);
-      console.log('Location:', location);
-      // Trigger payment and tracking logic here
+      const confirmation = window.confirm(`Confirm purchase of Mebiut Products worth Ksh ${amount}?`);
+      if (!confirmation) return;
+
+      setIsLoadingPayment(true);
+      setMessage('');
+
+      try {
+        const response = await fetch('https://mbackend-lg66.onrender.com/api/stk', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount, phoneNumber }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          setMessage('Payment request sent successfully. Please check your phone.');
+        } else {
+          setMessage('Failed to send payment request. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        setMessage('An error occurred. Please try again.');
+      } finally {
+        setIsLoadingPayment(false);
+      }
     } else {
       console.log('Invalid phone number');
     }
   };
 
-  // Handle live location
   const handleUseLiveLocation = () => {
     if (!useLiveLocation) {
       setIsLoadingLocation(true);
@@ -49,23 +74,16 @@ const Payment = () => {
           }
         );
       } else {
-        console.error('Geolocation is not supported by this browser.');
+        alert('Geolocation is not supported by this browser.');
         setIsLoadingLocation(false);
       }
-    } else {
-      setUseLiveLocation(false);
-      setLocation('');
     }
   };
 
   return (
     <div className="payment-container">
       <h2>Complete Payment</h2>
-
-      {/* Form */}
       <form onSubmit={handleSubmit} className="payment-form">
-
-        {/* Phone Number Input */}
         <div className="form-group">
           <label htmlFor="phoneNumber">M-Pesa Phone Number</label>
           <input
@@ -77,12 +95,9 @@ const Payment = () => {
             required
             className={!isValidPhone ? 'error' : ''}
           />
-          {!isValidPhone && (
-            <p className="error-message">Please enter a valid M-Pesa number (e.g., 07XXXXXXXX).</p>
-          )}
+          {!isValidPhone && <p className="error-message">Please enter a valid M-Pesa number (e.g., 07XXXXXXXX).</p>}
         </div>
 
-        {/* Location Input */}
         <div className="form-group">
           <label htmlFor="location">
             <FaMapMarkerAlt className="icon" /> Delivery Location
@@ -90,7 +105,7 @@ const Payment = () => {
           <input
             type="text"
             id="location"
-            value={location}
+            value={locationInput}
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Enter your location or use live location"
             disabled={useLiveLocation}
@@ -98,7 +113,6 @@ const Payment = () => {
           />
         </div>
 
-        {/* Live Location Button */}
         <div className="form-group">
           <button
             type="button"
@@ -110,18 +124,17 @@ const Payment = () => {
           </button>
         </div>
 
-        {/* Delivery Info */}
         <p className="delivery-info">
           <FaTruck className="icon" /> Free delivery within Nairobi CBD. Additional charges apply for delivery outside Nairobi.
         </p>
 
-        {/* Submit Button */}
-        <button type="submit" className="submit-payment-btn">
-          Submit Payment
+        <button type="submit" className="submit-payment-btn" disabled={isLoadingPayment}>
+          {isLoadingPayment ? 'Processing...' : 'Submit Payment'}
         </button>
       </form>
 
-      {/* Product Tracking */}
+      {message && <p className="payment-message">{message}</p>}
+
       <div className="tracking-section">
         <h3>Track Your Order</h3>
         <p>After completing your payment, you will be able to track your order here.</p>
