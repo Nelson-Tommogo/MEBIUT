@@ -1,5 +1,5 @@
-import img1 from '../../../assets/home/7.jpg';
-import img2 from '../../../assets/home/01.jpeg';
+import img1 from '../../../assets/home/2.jpg';
+import img2 from '../../../assets/home/11.jpg';
 
 const fakeData = [
     {
