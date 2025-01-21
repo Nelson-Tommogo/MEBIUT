@@ -3,8 +3,8 @@ import './OurShop.css';
 import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes } from 'react-icons/fa';
 import Footer from "../../components/Footer";
 import product1 from '../../assets/home/3.jpg'; 
-import product2 from '../../assets/home/2.jpg'; 
-import product3 from '../../assets/home/product3.jpeg'; 
+import product2 from '../../assets/home/4.jpg'; 
+import product3 from '../../assets/home/2.jpg'; 
 import product4 from '../../assets/home/9.jpg'; 
 
 const products = [
