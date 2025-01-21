@@ -10,19 +10,19 @@ import product6 from '../../assets/home/11.jpg';
 const fakeData = [
     {
         id: 1,
-        title: 'Kenyan Taste',
+        title: 'Kenyan Taste, Spiced Mayo',
         img: product1,
         category: 'kenyan taste'
     },
     {
         id: 2,
-        title: 'Spiced Mayonnaise',
+        title: 'Spiced Mayonnaise Mayo',
         img: product6,
         category: 'mayonnaise'
     },
     {
         id: 3,
-        title: 'Kenyan Taste',
+        title: 'Kenyan Taste Mayo',
         img: product2,
         category: 'kenyan taste'
     },
