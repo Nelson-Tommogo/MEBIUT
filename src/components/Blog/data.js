@@ -1,7 +1,7 @@
-import rise from '../../assets/home/product4.jpeg'; 
+import rise from '../../assets/home/2.jpg'; 
 import ourfuture from '../../assets/home/ourfuture.jpg'; 
-import teamMember3 from '../../assets/home/manu.jpg'; 
-import teamMember4 from '../../assets/home/01.jpeg'; 
+import teamMember3 from '../../assets/home/lynn.jpg'; 
+import teamMember4 from '../../assets/home/12.jpg'; 
 import launch from '../../assets/home/launch.JPG';
 import future from '../../assets/home/future.jpeg';
 
