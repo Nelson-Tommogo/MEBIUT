@@ -25,6 +25,7 @@ const OurShop = () => {
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [isLoadingPayment, setIsLoadingPayment] = useState(false);
   const [message, setMessage] = useState('');
+  const [sortCriteria, setSortCriteria] = useState(''); // New state for sorting
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(item => item.id === product.id);
@@ -59,9 +60,32 @@ const OurShop = () => {
     setSearchQuery(e.target.value);
   };
 
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const handleSortChange = (e) => {
+    setSortCriteria(e.target.value);
+  };
+
+  const applyFilterAndSort = (products) => {
+    const filteredProducts = products.filter(product =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    if (sortCriteria === 'price-asc') {
+      return filteredProducts.sort((a, b) => a.price - b.price);
+    }
+    if (sortCriteria === 'price-desc') {
+      return filteredProducts.sort((a, b) => b.price - a.price);
+    }
+    if (sortCriteria === 'name-asc') {
+      return filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    if (sortCriteria === 'name-desc') {
+      return filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    return filteredProducts; // If no sorting criteria is selected, return filtered products
+  };
+
+  const sortedAndFilteredProducts = applyFilterAndSort(products);
 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
   const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -99,8 +123,7 @@ const OurShop = () => {
 
             const data = await response.json();
 
-            // Check if the response was successful
-            if (response.ok) { // Adjusted check for successful response
+            if (response.ok) {
                 setMessage(data.message); // Show the message from the backend
             } else {
                 setMessage(data.error || 'Failed to send payment request. Please try again.');
@@ -114,9 +137,7 @@ const OurShop = () => {
     } else {
         console.log('Invalid phone number');
     }
-};
-
-
+  };
 
   const handleUseLiveLocation = () => {
     if (!useLiveLocation) {
@@ -155,6 +176,15 @@ const OurShop = () => {
             />
             <FaSearch className="search-icon" size={20} />
           </div>
+          <div className="sort-bar">
+            <select value={sortCriteria} onChange={handleSortChange}>
+              <option value="">Sort by</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="name-desc">Name: Z to A</option>
+            </select>
+          </div>
           <div className="cart-icon" onClick={toggleCart}>
             <FaShoppingCart size={30} />
             <span className="cart-count">{totalQuantity}</span>
@@ -162,8 +192,8 @@ const OurShop = () => {
         </header>
 
         <div className="product-grid">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
+          {sortedAndFilteredProducts.length > 0 ? (
+            sortedAndFilteredProducts.map((product) => (
               <div key={product.id} className="product-card">
                 <img src={product.image} alt={product.name} />
                 <h3>{product.name}</h3>
@@ -224,8 +254,7 @@ const OurShop = () => {
                       onChange={(e) => setPhoneNumber(e.target.value)}
                       placeholder="Enter your phone number"
                       required
-                      className={!isValidPhone ? 'error' : ''}
-                    />
+                      className={!isValidPhone ? 'error' : ''} />
                     {!isValidPhone && <p className="error-message">Please enter a valid M-Pesa number (e.g., 07XXXXXXXX).</p>}
                   </div>
 
@@ -238,33 +267,27 @@ const OurShop = () => {
                       onChange={(e) => setLocation(e.target.value)}
                       placeholder="Enter your location or use live location"
                       disabled={useLiveLocation}
-                      required={!useLiveLocation}
-                    />
+                      required={!useLiveLocation} />
                   </div>
 
-                  <div className="form-group">
-                    <button
-                      type="button"
-                      className={`live-location-btn ${useLiveLocation ? 'active' : ''}`}
-                      onClick={handleUseLiveLocation}
-                      disabled={isLoadingLocation}
-                    >
-                      {isLoadingLocation ? 'Getting Location...' : (useLiveLocation ? 'Using Live Location' : 'Use Live Location')}
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    className={`live-location-btn ${useLiveLocation ? 'active' : ''}`}
+                    onClick={handleUseLiveLocation}
+                    disabled={isLoadingLocation}>
+                    {isLoadingLocation ? 'Getting Location...' : (useLiveLocation ? 'Using Live Location' : 'Use Live Location')}
+                  </button>
 
                   <button type="submit" className="submit-payment-btn" disabled={isLoadingPayment}>
                     {isLoadingPayment ? 'Processing...' : 'Submit Payment'}
                   </button>
                 </form>
-
                 {message && <p className="payment-message">{message}</p>}
               </div>
             )}
           </div>
         )}
       </div>
-
       <Footer />
     </>
   );
