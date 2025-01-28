@@ -1,22 +1,22 @@
 import product1 from '../../assets/home/3.jpg'; 
 import product2 from '../../assets/home/2.jpg'; 
-import product3 from '../../assets/home/12.jpg'; 
+import product3 from '../../assets/home/6.jpeg'; 
 import product4 from '../../assets/home/9.jpg';
-import product5 from '../../assets/home/10.jpg';
-import product6 from '../../assets/home/11.jpg'; 
+import product5 from '../../assets/home/7.jpg';
+import product6 from '../../assets/home/product6.jpeg'; 
 
 
 
 const fakeData = [
     {
         id: 1,
-        title: 'Kenyan Taste, Spiced Mayo',
+        title: 'Kenyan Taste',
         img: product1,
         category: 'kenyan taste'
     },
     {
         id: 2,
-        title: 'Spiced Mayonnaise Mayo',
+        title: 'Spiced Mayonnaise',
         img: product6,
         category: 'mayonnaise'
     },

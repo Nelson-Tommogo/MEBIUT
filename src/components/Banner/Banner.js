@@ -25,7 +25,7 @@ const images = [
     alt: "Image 3",
     text: "Savor Every Bite with Our Fresh Ingredients",
     buttonLabel: "SEE SPECIALS",
-    buttonLink: "/complaint-form",
+    buttonLink: "",
   },
   {
     src: require("../../assets/home2.jpg"),
