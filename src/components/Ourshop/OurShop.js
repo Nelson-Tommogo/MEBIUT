@@ -20,11 +20,10 @@ const OurShop = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [paymentStatus, setPaymentStatus] = useState(null); // null, 'processing', 'success', 'error'
+  const [paymentStatus, setPaymentStatus] = useState(null);
   const [message, setMessage] = useState('');
   const [sortCriteria, setSortCriteria] = useState('');
 
-  // Toggle cart and reset payment status when opening
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
     if (!isCartOpen) {
@@ -289,34 +288,44 @@ const OurShop = () => {
                     <p className="error-message">{message}</p>
                   </div>
                 ) : (
+
                   <form onSubmit={handlePaymentSubmit} className="payment-form">
                     <div className="form-group">
-                      <label htmlFor="phone">M-Pesa Number</label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        value={phoneNumber}
-                        onChange={(e) => {
-                          setPhoneNumber(e.target.value);
-                          setIsValidPhone(true);
-                        }}
-                        placeholder="e.g. 0712345678"
-                        required
-                        className={!isValidPhone ? 'error' : ''}
-                      />
-                      {!isValidPhone && (
-                        <p className="validation-error">Invalid phone number format</p>
-                      )}
-                    </div>
+    <label htmlFor="phone">M-Pesa Number</label>
+    <input
+      id="phone"
+      type="tel"
+      value={phoneNumber}
+      onChange={(e) => {
+        setPhoneNumber(e.target.value);
+        setIsValidPhone(true);
+      }}
+      placeholder="e.g. 0712345678"
+      required
+      className={!isValidPhone ? 'error' : ''}
+      inputMode="numeric"
+    />
+    {!isValidPhone && (
+      <p className="validation-error">Invalid phone number format</p>
+    )}
+  </div>
 
-                    <button 
-                      type="submit" 
-                      className="checkout-btn"
-                      disabled={isProcessing}
-                    >
-                      Pay Ksh {totalAmount}
-                    </button>
-                  </form>
+  <button 
+    type="submit" 
+    className="checkout-btn"
+    disabled={isProcessing}
+  >
+    {isProcessing ? (
+      <>
+        <FaSpinner className="spinner" /> Processing...
+      </>
+    ) : (
+      `Pay Ksh ${totalAmount}`
+    )}
+  </button>
+  </form>
+
+
                 )}
               </div>
             </>
