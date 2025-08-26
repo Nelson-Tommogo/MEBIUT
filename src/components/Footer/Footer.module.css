@@ -1,195 +1,419 @@
-.logo{
-    font-size: 40px;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    color: #fefefe !important;
-    text-align: left;
-}
-
-.serviceItem {
-    display: flex;
-    align-items: center; /* Center icons and text */
-    cursor: pointer; /* Change cursor to pointer for better UX */
-    margin: 5px 0; /* Add some space between services */
-}
-
-.serviceIcon {
-    margin-right: 10px; /* Space between icon and text */
-    color: #fefefe; /* Adjust icon color */
-    font-size: 16px; /* Adjust icon size */
-}
-
-
-
-.contain {
-    position: relative; /* Ensure the dropdown is positioned relative to the parent */
-}
-
-.dropdownContent {
-    display: none; /* Hide by default; display controlled via inline styles */
-    background-color: #6c4d38; /* Same background color for consistency */
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute; /* Position it below the Services header */
-    z-index: 1000; /* Ensure it appears above other elements */
-    transition: max-height 0.2s ease-out; /* Optional: add some animation */
-}
-
-/* Optionally, add styles for the individual text items */
-.text {
-    color: white; /* Change the text color to improve visibility */
-    cursor: pointer; /* Change cursor to pointer for better UX */
-}
-
-
-.text{
-    color: #fefefe;
-    text-align: left;
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-.social_logo{
-    text-align: left;
-    margin-top: 25px;
-}
-.img{
-    margin-right: 14px;
-    margin-bottom: 40px;
-    cursor: pointer;
-    width: 40px;
-}
-.img:hover{
-    transform: scale(1.1);
-}
-.head{
-    color: #fefefe;
-    font-size: 22px;
-    text-align: left;
-    margin-top: 15px;
-    margin-bottom: 28px;
-    font-weight: 500;
-    
-}
-.bottom{
-    color: #fefefe;
-    font-size: 16px;
-    margin-bottom: 0px;
-    height: 49px;
-    padding-top: 12px;
-}
-
-@media screen and (max-width: 992px){
-    .text{
-        width: 230px;
-    }
-    .logo{
-        font-size: 35px;
-    }
-}
-@media screen and (max-width: 600px){
-    .logo{
-        font-size: 28px;
-    }
-    .head{
-        font-size: 17px;
-    }
-    .text{
-        font-size: 14px;
-    }
-    .bottom{
-        font-size: 14px;
-        height: 45px;
-    }
-}
-@media screen and (max-width: 575px){
-    .contain{
-        padding-left: 30% !important;
-        margin-bottom: 25px;
-    }
-    .head{
-        margin-bottom: 10px;
-    }
-    .img{
-        margin-bottom: 25px;
-    }
-}
-@media screen and (max-width: 455px){
-    .contain{
-        padding-left: 20% !important;
-    }
-}
-
-@media screen and (max-width: 350px){
-    .contain{
-        padding-left: 10% !important;
-    }
-    .text{
-        width: 100%;
-    }
-
-}
-/* Newsletter Section */
 .newsletterContainer {
-    position: relative;
-    background-color: #6c4d38;
-    padding: 40px;
+    background: linear-gradient(135deg, #6c4d38 0%, #ff6b2c 100%);
+    padding: 3rem 2rem;
     margin: 0 auto;
-    margin-bottom: -50px; /* Overlap the footer */
-    width: 70%;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: -50px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(108, 77, 56, 0.3);
+    position: relative;
+    z-index: 10;
 }
 
 .newsletterContent {
     text-align: center;
+    color: white;
+}
+
+.newsletterTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .newsletterText {
-    color: #fefefe;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.newsletterInputContainer {
+.newsletterForm {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.inputContainer {
+    position: relative;
+    width: 100%;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c4d38;
+    font-size: 1.2rem;
 }
 
 .newsletterInput {
-    padding: 10px;
-    font-size: 16px;
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
     border: none;
-    border-radius: 5px 0 0 5px;
-    width: 50%;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     outline: none;
+    transition: all 0.3s ease;
+}
+
+.newsletterInput:focus {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .subscribeButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #1f4d45;
+    background: #1f4d45;
+    color: white;
     border: none;
-    border-radius: 0 5px 5px 0;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    color: #000;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(31, 77, 69, 0.3);
 }
 
 .subscribeButton:hover {
-    background-color: #e1b000;
+    background: #2a685e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 77, 69, 0.4);
 }
 
-/* Adjustments for Socials Section */
-.icon {
-    margin-right: 10px;
-    font-size: 20px;
-    color: #fefefe;
+.successMessage {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-@media screen and (max-width: 600px) {
-    .newsletterInput {
-        width: 70%;
+/* Main Footer */
+.footer {
+    background: #0f172a;
+    color: white;
+    padding-top: 100px;
+    margin-top: -50px;
+    position: relative;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoContainer {
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff6b2c, #f8fafc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.logoSubtitle {
+    font-family: 'Poppins', sans-serif;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.companyDescription {
+    font-family: 'Poppins', sans-serif;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.contactIcon {
+    color: #ff6b2c;
+    font-size: 1rem;
+}
+
+.columnTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    position: relative;
+}
+
+.columnTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b2c, #6c4d38);
+    border-radius: 2px;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linkItem {
+    margin-bottom: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.linkItem:hover {
+    color: #ff6b2c;
+}
+
+.serviceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chevron {
+    color: #94a3b8;
+    transition: transform 0.3s ease;
+}
+
+.serviceDropdown {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.serviceLink {
+    color: #ff6b2c;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.serviceLink:hover {
+    color: #ff8e5c;
+}
+
+.socialText {
+    font-family: 'Poppins', sans-serif;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: #cbd5e1;
+}
+
+.socialLink:hover {
+    background: linear-gradient(135deg, #ff6b2c, #6c4d38);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.socialIcon {
+    font-size: 1.2rem;
+}
+
+.businessHours {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b2c;
+}
+
+.hoursTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #f8fafc;
+}
+
+.hoursText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+/* Map Section */
+.mapContainer {
+    padding: 0 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Copyright Section */
+.copyright {
+    background: #0a0f1c;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.legalLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legalLinks a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legalLinks a:hover {
+    color: #ff6b2c;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .newsletterContainer {
+        width: 95%;
+        padding: 2rem 1.5rem;
+        margin-top: -30px;
+    }
+    
+    .newsletterTitle {
+        font-size: 1.5rem;
+    }
+    
+    .newsletterText {
+        font-size: 1rem;
+    }
+    
+    .newsletterForm {
+        flex-direction: column;
+    }
+    
+    .footerContent {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .contactInfo {
+        align-items: center;
+    }
+    
+    .socialIcons {
+        justify-content: center;
+    }
+    
+    .legalLinks {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .columnTitle::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newsletterContainer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .newsletterTitle {
+        font-size: 1.3rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .footerContent {
+        padding: 2rem 1rem;
+    }
+    
+    .mapContainer {
+        padding: 0 1rem 1rem;
+    }
+    
+    .copyright {
+        padding: 1rem;
     }
 }

@@ -1,95 +1,191 @@
-.heading{
-    font-size: 48px;
-    padding-top: 155px;
-    width: 700px;
-    color: rgb(108,77,56);
-    margin: auto;
-    font-weight: bold;
+.container {
+    background: linear-gradient(135deg, #fffaf5 0%, #fff1e5 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-.sub_text{
-    font-size: 20px;
-    color: rgb(108,77,56);
-    margin-top: 23px;
-    margin-bottom: 90px;
-}
-.logo_head{
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(108,77,56);
-    margin-top: 24px;
-}
-.logo_text{
-    font-size: 16px;
-    color: rgb(17,17,17);
-    margin-top: 19px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-.sub{
-    margin-top: 113px;
-    padding-bottom: 125px;
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(158, 120, 95, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(108, 77, 56, 0.1) 0%, transparent 20%);
+    z-index: 1;
 }
 
+.contentWrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.headerSection {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #3a2a1f;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #9e785f;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(158, 120, 95, 0.2);
+    z-index: -1;
+    transform: skewX(-15deg);
+}
+
+.sub_text {
+    font-size: 1.25rem;
+    color: #6c4d38;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(108, 77, 56, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(108, 77, 56, 0.15);
+}
+
+.card:hover .iconWrapper {
+    transform: scale(1.1);
+}
+
+.card:hover .cardDecoration {
+    width: 100%;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f3e6d9 0%, #e6d2be 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
+.icon {
+    color: #6c4d38;
+    font-size: 2rem;
+}
+
+.logo_head {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3a2a1f;
+    margin-bottom: 15px;
+}
+
+.logo_text {
+    font-size: 1rem;
+    color: #5a5a5a;
+    line-height: 1.6;
+}
+
+.cardDecoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(to right, #6c4d38, #9e785f);
+    transition: width 0.5s ease;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 1000px) {
-    .heading{
-        font-size: 35px;
-        padding-top: 100px;
+    .heading {
+        font-size: 2.8rem;
     }
-    .sub{
-        padding-bottom: 100px;
-        margin-top: 80px;
-    }
-    .sub_text{
-        margin-bottom: 70px;
+    
+    .contentWrapper {
+        padding: 60px 20px;
     }
 }
 
 @media screen and (max-width: 770px) {
-    .heading{
-        font-size: 25px;
-        padding-top: 70px;
-        width: 400px;
+    .heading {
+        font-size: 2.2rem;
     }
-    .sub_text{
-        font-size: 17px;
+    
+    .sub_text {
+        font-size: 1.1rem;
     }
-    .sub{
-        padding-bottom: 70px;
-        margin-top: 60px;
+    
+    .cardsContainer {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 30px;
     }
-    .logo_head{
-        font-size: 18px;
-        margin-top: 8px;
-        margin-bottom: 0px;
-    }
-    .logo_text{
-        font-size: 14px;
-        margin-top: 8px;
-        margin-bottom: 30px;
+    
+    .card {
+        padding: 30px 25px;
     }
 }
 
 @media screen and (max-width: 430px) {
-
-    .heading{
-        font-size: 18px;
-        padding-top: 50px;
-        width: 100%;
-    }
-    .sub_text{
-        font-size: 13px;
-        margin-top: 5px;
-    }
-    .logo_head{
-        font-size: 15px;
-    }
-    .sub{
-        padding-bottom: 13px;
-    }
-    .icon {
-        color: white;
-        margin-bottom: 10px;
+    .heading {
+        font-size: 1.8rem;
     }
     
+    .sub_text {
+        font-size: 1rem;
+    }
+    
+    .contentWrapper {
+        padding: 50px 15px;
+    }
+    
+    .iconWrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .logo_head {
+        font-size: 1.3rem;
+    }
 }

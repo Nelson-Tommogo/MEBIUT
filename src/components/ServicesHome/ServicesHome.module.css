@@ -1,78 +1,123 @@
-.contain{
-    margin-top: 130px;
-    margin-bottom: 130px;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
+.servicesContainer {
+    background: linear-gradient(to bottom, #ffffff 0%, #fcf8f5 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.heading{
-    font-size: 30px;
-    color: #6C4D38 !important;
+.servicesContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 90% 5%, rgba(158, 120, 95, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 10% 80%, rgba(108, 77, 56, 0.05) 0%, transparent 25%);
+    z-index: 1;
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.headerSection {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.superHeading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #9e785f;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #3a2a1f;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.subHeading {
+    font-size: 1.3rem;
+    color: #6c4d38;
+    max-width: 600px;
+    margin: 0 auto;
     font-weight: 500;
-}
-.subHeading{
-    font-size: 34px;
-    font-weight: bold;
-    color: #222a41;
-    width: 645px;
-}
-.icon {
-    width: 60px; /* Adjust size as needed */
-    height: 60px;
-    margin-bottom: 15px; /* Space below the icon */
-}
-.serviceCard {
-    text-align: center; /* Center text and icon */
-    padding: 20px; /* Add padding for spacing */
-    border: 1px solid #ddd; /* Optional: border for cards */
-    border-radius: 5px; /* Optional: rounded corners */
-    margin-top: 10px;
+    line-height: 1.6;
 }
 
-.link {
-    color: #6C4D38 !important; /* Set the color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Optional: smooth color transition */
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.link:hover {
-    color: #94725b !important; /* Optional: change color on hover */
-}
-
+/* Responsive Design */
 @media screen and (max-width: 1200px) {
-    .contain{
-        margin-top: 80px;
-        margin-bottom: 80px;
-        padding-left: 40px !important;
-        padding-right: 40px !important;
+    .servicesContainer {
+        padding: 80px 0;
+    }
+    
+    .contentWrapper {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 770px) {
-    .subHeading{
-        font-size: 25px;
-        width: auto;
+    .heading {
+        font-size: 2.2rem;
     }
-    .heading{
-        font-size: 20px;
+    
+    .subHeading {
+        font-size: 1.1rem;
+    }
+    
+    .headerSection {
+        margin-bottom: 60px;
+    }
+    
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width: 430px) {
-    .subHeading{
-        font-size: 20px;
+@media screen and (max-width: 576px) {
+    .servicesContainer {
+        padding: 60px 0;
     }
-    .heading{
-        font-size: 17px;
+    
+    .contentWrapper {
+        padding: 0 20px;
     }
-    .contain{
-        margin-top: 80px;
-        margin-bottom: 100px;
+    
+    .heading {
+        font-size: 1.8rem;
     }
-}
-@media screen and (max-width: 380px) {
-    .contain{
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+    
+    .subHeading {
+        font-size: 1rem;
+    }
+    
+    .superHeading {
+        font-size: 0.9rem;
     }
 }

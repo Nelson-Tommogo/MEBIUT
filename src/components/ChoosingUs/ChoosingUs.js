@@ -5,27 +5,43 @@ import { faUtensils, faThumbsUp, faSmile } from '@fortawesome/free-solid-svg-ico
 
 const ChoosingUs = () => {
     return (
-        <div style={{ backgroundColor: '#fff1e5' }}>
-            <div className="container overflow-hidden">
-                <p data-aos='slide-right' data-aos-offset="220" className={styles.heading}>Top three reasons to choose Mebiut Company.</p>
-                <p data-aos='slide-left' className={styles.sub_text}>Experience the perfect blend of Kenyan flavors in every bite.</p>
-                <div className={`row ${styles.sub}`}>
-                    <div data-aos='fade-right' className="col-md-4 text-center">
-                        <FontAwesomeIcon icon={faUtensils} size="3x" className={styles.icon} />
-                        <p className={styles.logo_head}>Authentic Kenyan Taste</p>
+        <div className={styles.container}>
+            <div className={styles.contentWrapper}>
+                <div className={styles.headerSection}>
+                    <p data-aos='slide-right' data-aos-offset="220" className={styles.heading}>
+                        Why Choose <span className={styles.highlight}>Mebiut</span>?
+                    </p>
+                    <p data-aos='slide-left' className={styles.sub_text}>
+                        Experience the perfect blend of Kenyan flavors in every bite.
+                    </p>
+                </div>
+                
+                <div className={styles.cardsContainer}>
+                    <div data-aos='fade-up' className={styles.card}>
+                        <div className={styles.iconWrapper}>
+                            <FontAwesomeIcon icon={faUtensils} className={styles.icon} />
+                        </div>
+                        <h3 className={styles.logo_head}>Authentic Kenyan Taste</h3>
                         <p className={styles.logo_text}>Our sauces capture the essence of Kenyan cuisine, providing unique flavors that resonate with local tastes.</p>
+                        <div className={styles.cardDecoration}></div>
                     </div>
 
-                    <div data-aos='fade' className="col-md-4 text-center">
-                        <FontAwesomeIcon icon={faThumbsUp} size="3x" className={styles.icon} />
-                        <p className={styles.logo_head}>Quality Mayonnaise</p>
+                    <div data-aos='fade-up' data-aos-delay="100" className={styles.card}>
+                        <div className={styles.iconWrapper}>
+                            <FontAwesomeIcon icon={faThumbsUp} className={styles.icon} />
+                        </div>
+                        <h3 className={styles.logo_head}>Quality Mayonnaise</h3>
                         <p className={styles.logo_text}>Enjoy our creamy mayonnaise made with the finest ingredients, perfect for enhancing your meals.</p>
+                        <div className={styles.cardDecoration}></div>
                     </div>
 
-                    <div data-aos='fade-left' className="col-md-4 text-center">
-                        <FontAwesomeIcon icon={faSmile} size="3x" className={styles.icon} />
-                        <p className={styles.logo_head}>Customer Satisfaction</p>
+                    <div data-aos='fade-up' data-aos-delay="200" className={styles.card}>
+                        <div className={styles.iconWrapper}>
+                            <FontAwesomeIcon icon={faSmile} className={styles.icon} />
+                        </div>
+                        <h3 className={styles.logo_head}>Customer Satisfaction</h3>
                         <p className={styles.logo_text}>We prioritize your experience, ensuring our products meet your expectations for quality and flavor.</p>
+                        <div className={styles.cardDecoration}></div>
                     </div>
                 </div>
             </div>

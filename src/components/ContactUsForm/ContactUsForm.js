@@ -1,84 +1,133 @@
 import React, { useState } from "react";
 import styles from './ContactUsForm.module.css';
-// import {Map, GoogleApiWrapper} from 'google-maps-react';
 
-const ContactUsForm = () =>{
-    const [formContent, setFormContent ] = useState({});
+const ContactUsForm = () => {
+    const [formContent, setFormContent] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
 
-    const handleChange = ( event ) =>{
+    const handleChange = (event) => {
         const { value, name } = event.target;
-
         setFormContent(prevState => ({
             ...prevState,
             [name]: value
-        }))
-    }
+        }));
+    };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Form submission logic would go here
+        alert("Thank you for your message! We'll get back to you soon.");
+        setFormContent({ name: "", email: "", subject: "", message: "" });
+    };
 
-    return(
-        <>
-            <div className={`container ${styles.contain} overflow-hidden`}>
-                <p data-aos='fade-up' className={`${styles.heading} mx-auto`}>Mebiut We&apos;d Love to Hear From You</p>
+    return (
+        <div className={styles.container}>
+            <div className={styles.contactContainer}>
+                <div className={styles.headerSection}>
+                    <h2 data-aos='fade-up' className={styles.heading}>We'd Love to Hear From You</h2>
+                    <p data-aos='fade-up' data-aos-delay="100" className={styles.subheading}>
+                        Get in touch with us - we're here to help with any questions about our products.
+                    </p>
+                </div>
 
-                <div className="row">
-                    <div className="col-md-4" data-aos='fade-right'>
-                        <p className={styles.head}>Address</p>
-                        <p className={styles.content}>P.O BOX 00618 Ruaraka</p>
+                <div className={styles.contactInfo}>
+                    <div className={styles.infoCard} data-aos='fade-right'>
+                        <div className={styles.icon}>
+                            <i className="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 className={styles.infoTitle}>Address</h3>
+                        <p className={styles.infoContent}>P.O BOX 00618 Ruaraka, Nairobi, Kenya</p>
                     </div>
 
-                    <div className="col-md-4" data-aos='fade-up' data-aos-offset='100'>
-                        <p className={styles.head}>Contact</p>
-                        <p className={styles.content}>Mobile 	: +254113792645</p> 
-                        <p className={styles.content}>Phone 	: 254759735505</p>
-                        <p className={styles.content}>Email: info@mebiut.com</p>
+                    <div className={styles.infoCard} data-aos='fade-up' data-aos-delay="100">
+                        <div className={styles.icon}>
+                            <i className="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 className={styles.infoTitle}>Contact</h3>
+                        <p className={styles.infoContent}>Mobile: +254 113 792 645</p>
+                        <p className={styles.infoContent}>Phone: +254 759 735 505</p>
+                        <p className={styles.infoContent}>Email: info@mebiut.com</p>
                     </div>
 
-                    <div className="col-md-4" data-aos='fade-left' data-aos-offset='70'>
-                        <p className={styles.head}>Address</p>
-                        <p className={styles.content}>Monday - Friday: 09:00 - 20:00</p>
-                        <p className={styles.content}>Sunday &amp; Saturday: 10:30 - 22:00</p>
+                    <div className={styles.infoCard} data-aos='fade-left' data-aos-delay="200">
+                        <div className={styles.icon}>
+                            <i className="far fa-clock"></i>
+                        </div>
+                        <h3 className={styles.infoTitle}>Business Hours</h3>
+                        <p className={styles.infoContent}>Mon - Fri: 09:00 - 20:00</p>
+                        <p className={styles.infoContent}>Sat & Sun: 10:30 - 22:00</p>
                     </div>
                 </div>
 
-                <p className={styles.email} data-aos='fade-up'>You can email us</p>
+                <div className={styles.formSection}>
+                    <h3 data-aos='fade-up' className={styles.formTitle}>Send us a message</h3>
+                    
+                    <form onSubmit={handleSubmit} className={styles.contactForm}>
+                        <div className={styles.formRow}>
+                            <div className={styles.formGroup} data-aos='fade-right'>
+                                <label className={styles.label}>Your Name</label>
+                                <input 
+                                    name="name" 
+                                    value={formContent.name} 
+                                    onChange={handleChange} 
+                                    className={styles.input} 
+                                    type="text" 
+                                    required 
+                                />
+                            </div>
 
-                <div className="row">
-                    <div className="col-md-6" data-aos='fade-right' style={{textAlign: 'left'}}>
-                        <label className={styles.label}>Name</label><br/>
-                        <input name="name" value={formContent.name} onChange={handleChange} className={styles.input} type="text" />
-
-                        <label className={styles.label}>Email</label><br/>
-                        <input name="email" value={formContent.email} onChange={handleChange} className={styles.input} type="email" />
-
-                        <label className={styles.label}>Subject</label><br/>
-                        <input name="subject" value={formContent.subject} onChange={handleChange} className={styles.input} type="text" />
-                    </div>
-
-                    <div className="col-md-6" data-aos='fade-left' style={{textAlign: 'left'}}>
-                        <label className={styles.label}>Message</label><br/>
-                        <textarea name="message" value={formContent.message} onChange={handleChange} className={`${styles.input} ${styles.msg}`} type="text"/>
-                        <div style={{textAlign:'right'}}>
-                            <button className={`btn custom_btn ${styles.btn}`}>SEND</button>
+                            <div className={styles.formGroup} data-aos='fade-left'>
+                                <label className={styles.label}>Email Address</label>
+                                <input 
+                                    name="email" 
+                                    value={formContent.email} 
+                                    onChange={handleChange} 
+                                    className={styles.input} 
+                                    type="email" 
+                                    required 
+                                />
+                            </div>
                         </div>
-                    </div>
+
+                        <div className={styles.formGroup} data-aos='fade-up'>
+                            <label className={styles.label}>Subject</label>
+                            <input 
+                                name="subject" 
+                                value={formContent.subject} 
+                                onChange={handleChange} 
+                                className={styles.input} 
+                                type="text" 
+                                required 
+                            />
+                        </div>
+
+                        <div className={styles.formGroup} data-aos='fade-up'>
+                            <label className={styles.label}>Your Message</label>
+                            <textarea 
+                                name="message" 
+                                value={formContent.message} 
+                                onChange={handleChange} 
+                                className={`${styles.input} ${styles.textarea}`} 
+                                required
+                                rows="5"
+                            ></textarea>
+                        </div>
+
+                        <div data-aos='fade-up' className={styles.submitContainer}>
+                            <button type="submit" className={styles.submitButton}>
+                                Send Message
+                                <i className="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            {/* <div>
-                <Map
-                    google={this.props.google}
-                    style={{width:'100%', height:'50%'}}
-                    zoom={14}
-                    initialCenter={
-                        {
-                            lat: 23.760374,
-                            lng: 90.411643
-                        }
-                    }
-                />
-            </div> */}
-        </>
-    )
-}
+        </div>
+    );
+};
 
 export default ContactUsForm;

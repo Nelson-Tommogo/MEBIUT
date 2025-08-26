@@ -5,22 +5,28 @@ import data from './data';
 
 const Services = () => {
     return(
-        <div className={`container ${styles.contain} overflow-hidden pb-2`}>
-                <p data-aos='slide-right' className={styles.heading}>Mebiut Services</p>
-            <div>
-                <p data-aos='slide-left' className={`mx-auto ${styles.subHeading}`}>Check out Our Amazing Services</p>
-            </div>
+        <section className={styles.servicesSection}>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <p data-aos='fade-right' className={styles.subtitle}>Our Services</p>
+                    <h2 data-aos='fade-left' className={styles.title}>Mebiut Premium Services</h2>
+                    <p data-aos='fade-up' className={styles.description}>Discover our range of exceptional services designed to bring authentic Kenyan flavors to your doorstep</p>
+                </div>
 
-            <div className={`row ${styles.cont}`}>
-                {
-                    data && data.map(x=>(
-                        <div key={x.id} className="col-lg-4 col-md-6">
-                            <ServiceHome id={x.id} heading={x.heading} content={x.content} to={x.to} icon={x.icon}/>
-                        </div>
-                    ))
-                }
+                <div className={styles.servicesGrid}>
+                    {data && data.map(service => (
+                        <ServiceHome 
+                            key={service.id} 
+                            id={service.id} 
+                            heading={service.heading} 
+                            content={service.content} 
+                            to={service.to} 
+                            icon={service.icon}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 export default Services;

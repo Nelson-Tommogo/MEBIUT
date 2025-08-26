@@ -1,169 +1,326 @@
+/* Banner.module.css */
+
 /* Import slick carousel CSS */
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
 
+.bannerContainer {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
-.imgbox {
-    height: 94vh;
-    position: relative;
-    overflow: hidden; /* To ensure that images stay contained */
+.slider {
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .slideImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure images fit well */
-    display: block; /* Ensure images are visible */
-}
-.center {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2; /* Ensure text appears above the image */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.1);
+  transition: transform 10s ease-out;
 }
 
-.text {
-    font-size: 67px;
-    color: #fff;
-    font-weight: 400;
+.slide.slick-active .slideImage {
+  transform: scale(1);
 }
 
-.btn {
-    width: 272px;
-    height: 64px;
-    font-size: 14px;
-    background-color: #6C4D38 !important;
-    border: none;
-    cursor: pointer;
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(108, 77, 56, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
 }
 
-.btn:hover {
-    background-color: #9e785f !important;
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
-
 
 .textContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%; /* Restrict the width for better alignment */
-    margin: 0 auto; /* Center the container horizontally */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for better focus */
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.textContainer .text {
-    margin-bottom: 15px; /* Space between text and button */
-    text-align: center;
+.textContent {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.textContainer .btn {
-    transition: transform 0.2s ease; /* Smooth hover effect */
+.mainText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
 }
 
-.textContainer .btn:hover {
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+.subText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 715px) {
-    .textContainer {
-        padding: 15px; /* Adjust padding for smaller screens */
-    }
+.ctaButton {
+  background: linear-gradient(135deg, #ff6b2c 0%, #6c4d38 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(255, 107, 44, 0.4);
 }
 
-
-@media screen and (max-width: 1266px) {
-    .text {
-        font-size: 57px;
-    }
-    .btn {
-        width: 250px;
-        height: 58px;
-    }
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 44, 0.6);
 }
 
-@media screen and (max-width: 1090px) {
-    .text {
-        font-size: 47px;
-    }
-    .btn {
-        width: 220px;
-        height: 48px;
-    }
+.buttonIcon {
+  font-size: 1.2rem;
 }
 
-@media screen and (max-width: 921px) {
-    .text {
-        font-size: 37px;
-    }
-}
-
-@media screen and (max-width: 715px) {
-    .text {
-        font-size: 27px;
-    }
-    .btn {
-        width: 160px;
-        height: 38px;
-    }
-}
-
-@media screen and (max-width: 524px) {
-    .text {
-        width: 100%;
-    }
-    
-    .btn {
-        width: 140px;
-        height: 36px;
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 396px) {
-    .text {
-        font-size: 20px;
-    }
-    .btn {
-        width: 110px;
-        font-size: 11px;
-    }
-}
+/* Navigation arrows */
 .prevArrow, .nextArrow {
-    position: absolute;
-    top: 40%; /* Adjust this value to move the arrows higher or lower */
-    transform: translateY(-50%);
-    z-index: 3; /* Make sure arrows are above the images */
-    cursor: pointer;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Set a width for the arrow buttons */
-    height: 40px; /* Set a height for the arrow buttons */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .prevArrow {
-    left: 20px; /* Position on the left side */
+  left: 30px;
 }
 
 .nextArrow {
-    right: 20px; /* Position on the right side */
+  right: 30px;
 }
 
 .prevArrow:hover, .nextArrow:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
 }
-.prevArrow, .nextArrow {
-    top: 35%; /* Higher positioning */
-    transform: translateY(-50%);
+
+/* Dots styling */
+.dotsContainer {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.dotsContainer ul {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.customDot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customDot:hover, .slick-active .customDot {
+  background: linear-gradient(135deg, #ff6b2c 0%, #6c4d38 100%);
+  transform: scale(1.1);
+}
+
+/* Progress bar */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b2c, #6c4d38);
+  width: 0%;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .mainText {
+    font-size: 3rem;
+  }
+  
+  .subText {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mainText {
+    font-size: 2.5rem;
+  }
+  
+  .subText {
+    font-size: 1.1rem;
+  }
+  
+  .textContent {
+    padding: 30px;
+  }
+  
+  .prevArrow, .nextArrow {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainText {
+    font-size: 2rem;
+  }
+  
+  .subText {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .ctaButton {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+  
+  .textContent {
+    padding: 25px;
+  }
+  
+  .prevArrow, .nextArrow {
+    width: 40px;
+    height: 40px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .customDot {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mainText {
+    font-size: 1.8rem;
+  }
+  
+  .subText {
+    font-size: 0.95rem;
+  }
+  
+  .ctaButton {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .textContent {
+    padding: 20px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .prevArrow, .nextArrow {
+    width: 35px;
+    height: 35px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .customDot {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .dotsContainer {
+    bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mainText {
+    font-size: 1.5rem;
+  }
+  
+  .subText {
+    font-size: 0.85rem;
+  }
+  
+  .textContainer {
+    padding: 0 15px;
+  }
 }

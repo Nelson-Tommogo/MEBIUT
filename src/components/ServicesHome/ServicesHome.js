@@ -5,31 +5,32 @@ import data from "./data";
 
 const ServicesHome = () => {
     return (
-        <div className={`container ${styles.contain} overflow-hidden pb-4`}>
-            <p data-aos="slide-right" className={styles.heading}>
-                Services
-            </p>
-            <div>
-                <p
-                    data-aos="slide-left"
-                    className={`mx-auto ${styles.subHeading}`}
-                >
-                    Make Every Bite Unforgettable With Us
-                </p>
-            </div>
+        <div className={styles.servicesContainer}>
+            <div className={styles.contentWrapper}>
+                <div className={styles.headerSection}>
+                    <p data-aos="slide-right" className={styles.superHeading}>
+                        WHAT WE OFFER
+                    </p>
+                    <h2 data-aos="slide-right" className={styles.heading}>
+                        Our Services
+                    </h2>
+                    <p data-aos="slide-left" className={styles.subHeading}>
+                        Make Every Bite Unforgettable With Us
+                    </p>
+                </div>
 
-            <div className="row">
-                {data &&
-                    data.map((x) => (
-                        <div key={x.id} className="col-lg-4 col-md-6">
+                <div className={styles.servicesGrid}>
+                    {data &&
+                        data.map((x) => (
                             <ServiceHome
+                                key={x.id}
                                 heading={x.heading}
                                 content={x.content}
                                 to={x.to}
-                                icon={x.icon} // Pass the FontAwesome icon prop
+                                icon={x.icon}
                             />
-                        </div>
-                    ))}
+                        ))}
+                </div>
             </div>
         </div>
     );

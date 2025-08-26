@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import styles from "./NavbarMain.module.css";
 import { NavLink} from "react-router-dom";
-import logo from './logo.png'; // Assuming logo.png is in the same folder
+import logo from './logo.png';
 
 const NavbarMain = () => {
-  const [showRegistrationDropdown, setShowRegistrationDropdown] = useState(false);
   const [activeNav, setActiveNav] = useState([true, false, false, false, false, false, false]);
   const [expand, setExpand] = useState(false);
 
@@ -134,41 +133,6 @@ const NavbarMain = () => {
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
-
-              {/* Registration Dropdown */}
-              <NavDropdown
-                show={showRegistrationDropdown}
-                onMouseEnter={() => setShowRegistrationDropdown(true)}
-                onMouseLeave={() => setShowRegistrationDropdown(false)}
-                className={`${styles.nav_text} nav-link`}
-                title="Registration"
-                id="nav-registration-dropdown"
-              >
-                <NavDropdown.Item>
-                  <NavLink
-                    to="/signup"
-                    className={styles.dropdownText}
-                    onClick={() => {
-                      handleActiveNav(7);
-                      closeNav();
-                    }}
-                  >
-                    Signup
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
-                    to="/login"
-                    className={styles.dropdownText}
-                    onClick={() => {
-                      handleActiveNav(7);
-                      closeNav();
-                    }}
-                  >
-                    Login
-                  </NavLink>
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -176,5 +140,4 @@ const NavbarMain = () => {
     </>
   );
 };
-
 export default NavbarMain;

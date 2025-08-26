@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import styles from './CaseStudy.module.css';
 import { Link } from 'react-router-dom';
-import fakeData from './fakeData';
+import fakeData from './casestudydata';
 
 const CaseStudy = () => {
     const [data, setData] = useState(fakeData);
     const [active, setActive] = useState([true, false, false]);
 
     // Filter data based on the new categories
-    const filterData = (category) => {
+    const filterData = (category, index) => {
         if (category === 'all') {
             setData(fakeData); // Show all data
         } else {
             let temp = fakeData.filter((x) => x.category === category);
             setData([...temp]);
         }
+        activeNav(index);
     }
 
     // Function to handle active state for buttons
@@ -25,34 +26,76 @@ const CaseStudy = () => {
     }
 
     return (
-        <div className={`container ${styles.contain} overflow-hidden`}>
-            <p className={styles.head} data-aos='slide-right'>OUR PRODUCTS</p>
-            <div data-aos='slide-left'>
-                <p className={styles.our}>EXPLORE&nbsp;</p>
-                <p className={styles.study}>OUR RANGE</p>
-            </div>
+        <div className={styles.caseStudyContainer}>
+            <div className={styles.contentWrapper}>
+                <div className={styles.headerSection}>
+                    <p className={styles.superHeading} data-aos='slide-right'>OUR PRODUCTS</p>
+                    <h2 className={styles.mainHeading} data-aos='slide-left'>
+                        <span className={styles.explore}>EXPLORE</span>
+                        <span className={styles.ourRange}> OUR RANGE</span>
+                    </h2>
+                    <p className={styles.subHeading} data-aos='fade'>
+                        Discover our premium selection of authentic Kenyan sauces and condiments
+                    </p>
+                </div>
 
-            {/* Updated category buttons */}
-            <div className={`${styles.grp_btn}`} data-aos='fade'>
-                <p onClick={() => { setData(fakeData); activeNav(0); }} className={`${styles.filter} ${active[0] ? styles.active : null}`}>ALL</p>
-                <p onClick={() => { filterData('kenyan taste'); activeNav(1); }} className={`${styles.filter} ${active[1] ? styles.active : null}`}>KENYAN TASTE</p>
-                <p onClick={() => { filterData('mayonnaise'); activeNav(2); }} className={`${styles.filter} ${active[2] ? styles.active : null}`}>MAYONNAISE</p>
-            </div>
+                {/* Updated category buttons */}
+                <div className={styles.filterButtons} data-aos='fade'>
+                    <button 
+                        onClick={() => filterData('all', 0)} 
+                        className={`${styles.filterBtn} ${active[0] ? styles.active : ''}`}
+                    >
+                        ALL PRODUCTS
+                    </button>
+                    <button 
+                        onClick={() => filterData('kenyan taste', 1)} 
+                        className={`${styles.filterBtn} ${active[1] ? styles.active : ''}`}
+                    >
+                        KENYAN TASTE
+                    </button>
+                    <button 
+                        onClick={() => filterData('mayonnaise', 2)} 
+                        className={`${styles.filterBtn} ${active[2] ? styles.active : ''}`}
+                    >
+                        MAYONNAISE
+                    </button>
+                    <button 
+                        onClick={() => filterData('chilly sauce', 3)} 
+                        className={`${styles.filterBtn} ${active[3] ? styles.active : ''}`}
+                    >
+                        Chilly Sauce
+                    </button>
+                </div>
 
-            {/* Updated layout to show images with titles */}
-            <div className='row mb-2'>
-                {
-                    data.map((x) => (
-                        <div key={x.id} className={`col-md-4 col-sm-6 mt-4`} data-aos='fade'>
-                            <Link to="/OurShop" style={{ textDecoration: "none" }}>
-                                <div className={styles.img} style={{ backgroundImage: `url(${x.img})` }}>
-                                    {/* Display only title below the image */}
-                                    <p className={styles.imgTitle}>{x.title}</p>
+                {/* Product grid */}
+                <div className={styles.productsGrid}>
+                    {data.map((x) => (
+                        <div key={x.id} className={styles.productCard} data-aos='fade-up'>
+                            <Link to="/OurShop" className={styles.productLink}>
+                                <div 
+                                    className={styles.productImage} 
+                                    style={{ backgroundImage: `url(${x.img})` }}
+                                >
+                                    <div className={styles.imageOverlay}></div>
+                                    <div className={styles.productInfo}>
+                                        <h3 className={styles.productTitle}>{x.title}</h3>
+                                        <p className={styles.productCategory}>{x.category}</p>
+                                        <div className={styles.viewProduct}>
+                                            View Product
+                                            <span className={styles.arrowIcon}>→</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </Link>
                         </div>
-                    ))
-                }
+                    ))}
+                </div>
+
+                {data.length === 0 && (
+                    <div className={styles.noProducts} data-aos='fade'>
+                        <p>No products found in this category.</p>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -1,71 +1,256 @@
-.parentContainer {
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.impactSection {
+    background: linear-gradient(135deg, #fffaf5 0%, #f9f3ed 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.impactSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(158, 120, 95, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(108, 77, 56, 0.1) 0%, transparent 20%);
+    z-index: 1;
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.textContainer {
-    margin-bottom: 40px;
+.headerSection {
     text-align: center;
+    margin-bottom: 80px;
 }
 
-.heading {
-    font-size: 30px;
-    font-weight: 500;
-    color: #6C4D38 !important;
-    font-family: 'Poppins';
-    margin-bottom: 10px;
+.superHeading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #9e785f;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.mainHeading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #3a2a1f;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .subHeading {
-    font-size: 34px;
-    font-family: 'Poppins';
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.content {
-    font-size: 16px;
-    font-family: 'Poppins';
-    color: #6d7783;
+    font-size: 1.2rem;
+    color: #5a5a5a;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 500;
     line-height: 1.6;
-    text-align: justify;
 }
 
-.countersContainer {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+.countersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 
-.counters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.counter {
+.counterCard {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
     text-align: center;
-    margin: 10px;
-    flex: 1 1 150px; /* Adjusts size dynamically */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(108, 77, 56, 0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counterCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(108, 77, 56, 0.15);
+}
+
+.counterCard:hover .counterHoverEffect {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.counterCard:hover .iconContainer {
+    transform: scale(1.1);
+}
+
+.iconContainer {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9f3ed 0%, #f3e6d9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
 }
 
 .icon {
-    color: #6C4D38;
-    margin-bottom: 10px;
+    color: #6c4d38;
+    font-size: 2rem;
+}
+
+.counterContent {
+    position: relative;
+    z-index: 2;
 }
 
 .counterValue {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6C4D38;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #3a2a1f;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.counterSuffix {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #9e785f;
 }
 
 .counterLabel {
-    font-size: 14px;
-    color: #6d7783;
+    font-size: 1rem;
+    color: #5a5a5a;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.counterHoverEffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(249, 243, 237, 0.4) 0%, rgba(243, 230, 217, 0.4) 100%);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .impactSection {
+        padding: 80px 0;
+    }
+    
+    .mainHeading {
+        font-size: 2.4rem;
+    }
+    
+    .countersGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .impactSection {
+        padding: 60px 0;
+    }
+    
+    .headerSection {
+        margin-bottom: 60px;
+    }
+    
+    .mainHeading {
+        font-size: 2rem;
+    }
+    
+    .subHeading {
+        font-size: 1.1rem;
+    }
+    
+    .countersGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .counterCard {
+        padding: 30px 20px;
+    }
+    
+    .iconContainer {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .icon {
+        font-size: 1.8rem;
+    }
+    
+    .counterValue {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .impactSection {
+        padding: 50px 0;
+    }
+    
+    .contentWrapper {
+        padding: 0 15px;
+    }
+    
+    .mainHeading {
+        font-size: 1.8rem;
+    }
+    
+    .superHeading {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .subHeading {
+        font-size: 1rem;
+    }
+    
+    .countersGrid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .counterCard {
+        padding: 25px 20px;
+    }
+    
+    .iconContainer {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon {
+        font-size: 1.5rem;
+    }
+    
+    .counterValue {
+        font-size: 1.8rem;
+    }
+    
+    .counterLabel {
+        font-size: 0.9rem;
+    }
 }
