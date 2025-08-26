@@ -8,14 +8,6 @@ const servicesData = [
         name: 'Complaint Form', 
         pdfUrl: 'https://docs.google.com/forms/d/1YX5Hb75nYQ-gR69LI0IYUr296ofgJdq2G4rlSxRPreg/edit?ts=675e7504' 
     },
-    { 
-        name: 'Kenyan Taste Website', 
-        pdfUrl: 'https://kenyantaste.mebiut.com' 
-    },
-    { 
-        name: 'Mebiuts Mayonnaise Website', 
-        pdfUrl: 'https://mayonnaise.mebiut.com' 
-    },
 ];
 
 const Footer = () => {
@@ -80,9 +72,6 @@ const Footer = () => {
                             <h3 className={styles.logo}>Mebiut</h3>
                             <div className={styles.logoSubtitle}>Authentic Kenyan Flavors</div>
                         </div>
-                        <p className={styles.companyDescription}>
-                            Mebiut specializes in creating authentic Kenyan sauces and mayonnaise that make every bite unforgettable.
-                        </p>
                         <div className={styles.contactInfo}>
                             <div className={styles.contactItem}>
                                 <FaMapMarkerAlt className={styles.contactIcon} />
@@ -138,10 +127,8 @@ const Footer = () => {
                         <h4 className={styles.columnTitle}>Our Services</h4>
                         <ul className={styles.linkList}>
                             <li className={styles.linkItem}>Kenyan Taste Development</li>
-                            <li className={styles.linkItem}>Mebiut Mayonnaise</li>
-                            <li className={styles.linkItem}>Custom Recipe Development</li>
-                            <li className={styles.linkItem}>Bulk Orders</li>
-                            <li className={styles.linkItem}>Recipe Workshops</li>
+                            <li className={styles.linkItem}>Mayonnaise Development</li>
+                            <li className={styles.linkItem}>Mebiut Chilly Development </li>
                         </ul>
                     </div>
 
@@ -217,7 +204,7 @@ const Footer = () => {
                     <div className={styles.legalLinks}>
                         <a href="/privacy">Privacy Policy</a>
                         <a href="/terms">Terms of Service</a>
-                        <a href="/contact">Contact Us</a>
+                        <a href="/contactUs">Contact Us</a>
                     </div>
                 </div>
             </footer>

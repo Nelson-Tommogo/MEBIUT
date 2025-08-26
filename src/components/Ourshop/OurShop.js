@@ -3,11 +3,49 @@ import './OurShop.css';
 import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes, FaCheck, FaTimesCircle, FaSpinner, FaFilter, FaStar, FaPlus, FaMinus } from 'react-icons/fa';
 import Footer from "../../components/Footer";
 
+// Import local images
+import KenyanTaste340 from '../../assets/home/2.jpg';
+import KenyanTaste250 from '../../assets/home/chilly.jpg';
+import Mayonnaise from '../../assets/home/4.jpg';
+import ChillySauce from '../../assets/home/11.jpg';
+
 const products = [
-  { id: 1, name: 'Kenyan Taste Sauce', description: '340g - Authentic Kenyan flavor', image: '../../assets/home/2.jpg', price: 450, rating: 4.8, category: 'sauces' },
-  { id: 2, name: 'Kenyan Taste Sauce', description: '250g - Perfect for family meals', image: '../../assets/home/chilly.jpg', price: 300, rating: 4.5, category: 'sauces' },
-  { id: 3, name: 'Mebiut Mayonnaise', description: '340g - Creamy and rich', image: '../../assets/home/4.jpg', price: 400, rating: 4.7, category: 'mayonnaise' },
-  { id: 4, name: 'Chilly Sauce', description: '250g - Spicy and flavorful', image: '../../assets/home/11.jpg', price: 250, rating: 4.3, category: 'chilly-sauce' },
+  { 
+    id: 1, 
+    name: 'Kenyan Taste Sauce', 
+    description: '340g - Authentic Kenyan flavor', 
+    image: KenyanTaste340, 
+    price: 450, 
+    rating: 4.8, 
+    category: 'sauces' 
+  },
+  { 
+    id: 2, 
+    name: 'Kenyan Taste Sauce', 
+    description: '250g - Perfect for family meals', 
+    image: KenyanTaste250, 
+    price: 300, 
+    rating: 4.5, 
+    category: 'sauces' 
+  },
+  { 
+    id: 3, 
+    name: 'Mebiut Mayonnaise', 
+    description: '340g - Creamy and rich', 
+    image: Mayonnaise, 
+    price: 400, 
+    rating: 4.7, 
+    category: 'mayonnaise' 
+  },
+  { 
+    id: 4, 
+    name: 'Chilly Sauce', 
+    description: '250g - Spicy and flavorful', 
+    image: ChillySauce, 
+    price: 250, 
+    rating: 4.3, 
+    category: 'chilly-sauce' 
+  },
 ];
 
 const OurShop = () => {
@@ -22,21 +60,23 @@ const OurShop = () => {
   const [sortCriteria, setSortCriteria] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [cartUpdate, setCartUpdate] = useState(0);
 
   // Load cart from localStorage on component mount
   useEffect(() => {
     const savedCart = localStorage.getItem('mebiutCart');
     if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
+      try {
+        setCartItems(JSON.parse(savedCart));
+      } catch (error) {
+        console.error('Error parsing cart data:', error);
+        setCartItems([]);
+      }
     }
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('mebiutCart', JSON.stringify(cartItems));
-    // Force re-render for cart button
-    setCartUpdate(prev => prev + 1);
   }, [cartItems]);
 
   const toggleCart = () => {
