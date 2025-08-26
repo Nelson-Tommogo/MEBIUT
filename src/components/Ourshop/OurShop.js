@@ -5,9 +5,9 @@ import Footer from "../../components/Footer";
 
 // Import local images
 import KenyanTaste340 from '../../assets/home/2.jpg';
-import KenyanTaste250 from '../../assets/home/chilly.jpg';
+import ChillySauce from '../../assets/home/chilly.jpg';
 import Mayonnaise from '../../assets/home/4.jpg';
-import ChillySauce from '../../assets/home/11.jpg';
+import KenyanTaste250 from '../../assets/home/11.jpg';
 
 const products = [
   { 
