@@ -3,7 +3,6 @@ import './OurShop.css';
 import { FaSearch, FaShoppingCart, FaTrashAlt, FaTimes, FaCheck, FaTimesCircle, FaSpinner, FaFilter, FaStar, FaPlus, FaMinus } from 'react-icons/fa';
 import Footer from "../../components/Footer";
 
-// Import local images
 import KenyanTaste340 from '../../assets/home/2.jpg';
 import ChillySauce from '../../assets/home/chilly.jpg';
 import Mayonnaise from '../../assets/home/4.jpg';
@@ -327,9 +326,15 @@ const OurShop = () => {
             </div>
           </div>
 
-          <div className="cart-icon" onClick={toggleCart}>
-            <FaShoppingCart />
-            {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+          {/* Enhanced Cart Button - More Visible */}
+          <div className="cart-icon-container">
+            <div className="cart-icon" onClick={toggleCart}>
+              <FaShoppingCart />
+              {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+            </div>
+            {totalQuantity > 0 && (
+              <div className="cart-notification-badge">{totalQuantity}</div>
+            )}
           </div>
         </header>
 
