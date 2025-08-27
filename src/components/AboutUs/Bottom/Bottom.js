@@ -7,13 +7,15 @@ const Bottom = () => {
         {
             id: 1,
             heading: 'Kenyan Taste Sauce',
-            content: 'At Mebiut, our Kenyan Taste Sauces are crafted with the finest locally sourced spices and ingredients, bringing the authentic flavors of Kenya to your kitchen. Whether you want to spice up your meals or explore new culinary adventures, our sauces offer the perfect balance of heat and flavor. Each bottle is a tribute to Kenya\'s rich culinary heritage, made with creativity and passion for good taste.'
-        },
+            content: 'Crafted with locally sourced spices, our Kenyan Taste Sauce adds authentic flavor and the perfect balance of heat to your meals.'        },
         {
             id: 2,
             heading: 'Kenyan Taste Mayonnaise',
-            content: 'Our Kenyan Taste Mayonnaise is the perfect blend of creamy richness and delicate flavor. Ideal for sandwiches, salads, and dipping, it is a versatile staple in any kitchen. Made with high-quality ingredients, this mayonnaise brings out the best in every dish. At Mebiut, we ensure that our products are crafted with care, delivering the perfect consistency and taste to enhance your meals.'
-        },
+            content: 'Smooth, creamy, and versatile, our Kenyan Taste Mayonnaise is perfect for sandwiches, salads, and dips.'        },
+        {
+            id: 2,
+            heading: 'Mebiut Chilly Sauce',
+            content: 'Mebiut Chilly Sauce brings a bold, spicy kick to any meal. Made with fresh chilies and spices, it’s perfect for adding heat and flavor to your favorite dishes.'        },
     ];
 
     return (

@@ -90,7 +90,7 @@ const OurShop = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       const cart = document.querySelector('.cart-dropdown');
-      const cartIcon = document.querySelector('.cart-icon');
+      const cartIcon = document.querySelector('.cart-icon-container');
       
       if (isCartOpen && cart && !cart.contains(event.target) && 
           cartIcon && !cartIcon.contains(event.target)) {
@@ -178,7 +178,7 @@ const OurShop = () => {
   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-  // Payment handling
+  // Payment handling - Updated to accept +254, 254, and 07 formats
   const validatePhoneNumber = (number) => {
     const cleaned = number.replace(/\D/g, '');
     return /^(07|01|254)\d{8}$/.test(cleaned);
@@ -187,9 +187,17 @@ const OurShop = () => {
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
     
-    if (!validatePhoneNumber(phoneNumber)) {
+    // Remove all non-digit characters first
+    let cleanedPhone = phoneNumber.replace(/\D/g, '');
+    
+    // Check if it starts with +254 and remove the +
+    if (phoneNumber.startsWith('+254')) {
+      cleanedPhone = phoneNumber.replace('+', '');
+    }
+    
+    if (!validatePhoneNumber(cleanedPhone)) {
       setIsValidPhone(false);
-      setMessage('Please enter a valid M-Pesa number (e.g., 07XXXXXXXX)');
+      setMessage('Please enter a valid M-Pesa number (e.g., 07XXXXXXXX, 2547XXXXXXXX, or +2547XXXXXXXX)');
       setPaymentStatus('error');
       return;
     }
@@ -206,11 +214,14 @@ const OurShop = () => {
     setMessage('Sending payment request...');
 
     try {
-      // Format phone number for M-Pesa (add country code if missing)
-      let formattedPhone = phoneNumber.replace(/\D/g, '');
+      // Format phone number for M-Pesa (ensure it starts with 254)
+      let formattedPhone = cleanedPhone;
       if (formattedPhone.startsWith('0')) {
         formattedPhone = '254' + formattedPhone.substring(1);
-      } else if (!formattedPhone.startsWith('254')) {
+      } else if (formattedPhone.startsWith('254')) {
+        // Already in correct format, do nothing
+      } else {
+        // For any other format that passed validation, add 254 prefix
         formattedPhone = '254' + formattedPhone;
       }
 
@@ -327,14 +338,12 @@ const OurShop = () => {
           </div>
 
           {/* Enhanced Cart Button - More Visible */}
-          <div className="cart-icon-container">
-            <div className="cart-icon" onClick={toggleCart}>
+          <div className="cart-icon-container" onClick={toggleCart}>
+            <div className="cart-icon">
               <FaShoppingCart />
               {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
             </div>
-            {totalQuantity > 0 && (
-              <div className="cart-notification-badge">{totalQuantity}</div>
-            )}
+            <span className="cart-text">Cart</span>
           </div>
         </header>
 
@@ -493,10 +502,9 @@ const OurShop = () => {
                           setPhoneNumber(e.target.value);
                           setIsValidPhone(true);
                         }}
-                        placeholder="e.g. 0712345678"
+                        placeholder="e.g. 0712345678, 254712345678, or +254712345678"
                         required
                         className={!isValidPhone ? 'error' : ''}
-                        inputMode="numeric"
                       />
                       {!isValidPhone && (
                         <p className="validation-error">Invalid phone number format</p>
